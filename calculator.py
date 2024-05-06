@@ -4,8 +4,9 @@ def main ():
     y = float(input("Type in the second number, please. "))
     #asks for users second number
     z = round(x + y, 2)
-    return z
+
     print (z)
 
 main()
+
 
