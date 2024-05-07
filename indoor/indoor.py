@@ -1,5 +1,5 @@
 def main():
-    name = str.lower(input("Whats is your favorite food and computer science course? "))
+    name = str.lower(input("Whats is your favorite food and computer science course? ")).strip(",")
     hello(name)
 
 def hello(para):
