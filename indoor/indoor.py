@@ -1,5 +1,5 @@
 def main():
-    name = str.lower(input("Whats is your favorite food and computer science course? "))
+    name = str.lower(input("Please type in your favorite food and computer science course, separated only by a blank space. (example: banana cs50) "))
     name = name.strip(",")
     hello(name)
 
