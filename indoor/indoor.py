@@ -1,9 +1,9 @@
 def main():
     name = str.lower(input("Whats is your favorite food and computer science course? "))
-    name.split (first, half)
+    first, last = name.split
     hello(name)
 
 def hello(para):
-    print("Nice!", para, "Is a great course")
+    print("Nice!", first, "Is a great food.", "And", last, "is a great course!!")
 
 main()
