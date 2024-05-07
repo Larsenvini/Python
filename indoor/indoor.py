@@ -1,8 +1,8 @@
 def main():
-    name = str.lower(input("Say something in caps lock"))
+    name = str.lower(input("Say something in caps lock "))
     hello(name)
 
 def hello(para):
-    print(para, "is better r")
+    print(para)
 
 main()
