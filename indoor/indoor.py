@@ -3,6 +3,6 @@ def main():
     hello(name)
 
 def hello(para):
-    print("")
+    print(para, "is better r")
 
 main()
