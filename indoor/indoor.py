@@ -1,6 +1,6 @@
 def main():
     name = str.lower(input("Whats is your favorite food and computer science course? "))
-    first, last = name.split
+    first, last = name.split(" ")
     hello(name)
 
 def hello(para):
