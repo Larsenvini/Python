@@ -4,6 +4,6 @@ def main():
 
 def hello(para):
     first, last = para.split(" ")
-    print(f"Nice!", {first}, "Is a great food.", "And", {last}, "is a great course!!")
+    print("Nice!", first, "Is a great food.", "And", last, "is a great course!!")
 
 main()
