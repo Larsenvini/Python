@@ -1,6 +1,6 @@
 def calculator():
-    mass = input("Welcome to Vini's EnergyCalculator! Type a mass: ")
-    energy = 
+    m = input("Welcome to Vini's EnergyCalculator! Type a mass: ")
+    c =
 
 
 
