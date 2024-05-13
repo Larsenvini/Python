@@ -2,7 +2,7 @@ def main():
     dollars = dollars_to_float(input("How much was the meal? "))
     percent = percent_to_float(input("What percentage would you like to tip? "))
     tip = dollars * percent
-    rounded_tip = round(tip, 2)
+    rounded_tip = round(tip, 3)
     print("Leave ${0}".format(rounded_tip))
 
 
