@@ -7,12 +7,13 @@ def main():
 
 def dollars_to_float(d):
     str.strip('$')
-    str.
+    str.round(3)
 
 
 
 def percent_to_float(p):
-    # TODO
+    str.strip('%')
+    str.round(3)
 
 
     main()
