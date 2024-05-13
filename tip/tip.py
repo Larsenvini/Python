@@ -8,12 +8,12 @@ def main():
 
 def dollars_to_float(d):
     d = d.strip('$')
-    return round(float(d),2)
+    return round(float(d),3)
 
 
 
 def percent_to_float(p):
     p = p.strip('%')
-    return round(float(p)/100,2)
+    return round(float(p)/100,3)
 
 main()
