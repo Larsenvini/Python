@@ -1,5 +1,5 @@
 def main():
-    playback = str.replace(" ", "...")(input())
+    playback = input().replace(" ", "...")
     vini (playback)
 
 def vini(case):
