@@ -1,5 +1,2 @@
-translation_table = str.maketrans({':)': '🙂', ':(': '🙁'})
-
-original_string = input()
-translated_string = original_string.translate(translation_table)
-print(translated_string)
+def cs50translate(text, translation_dict ):
+    for key, value in translation_dict.items
