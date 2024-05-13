@@ -1,18 +1,10 @@
 def main():
-    dollars = dollars_to_float(float("How much was the meal? "))
-    percent = percent_to_float(float("What percentage would you like to tip? "))
+    dollars = float("How much was the meal? ")).strip('$').round(3)
+    percent = float("What percentage would you like to tip? ")).strip('%').round(3)
     tip = dollars * percent
     print(f"Leave ${tip:.2f}")
 
 
-def dollars_to_float(d):
-    str.strip('$')
-    round(3)
 
-
-
-def percent_to_float(p):
-    str.strip('%')
-    round(3)
 
 main()
