@@ -7,7 +7,7 @@ def main():
 
 def dollars_to_float(d):
     str.strip('$')
-    $49.9round(3)
+    round(3)
 
 
 
