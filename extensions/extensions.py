@@ -10,13 +10,13 @@ def main():
         print("image/png")
 
     elif mediatype.endswith(".pdf"):
-        print("image/pdf")
+        print("application/pdf")
 
     elif mediatype.endswith(".txt"):
-        print("image/txt")
+        print("text/plain")
 
     elif mediatype.endswith(".zip"):
-        print("image/zip")
+        print("application/zip")
 
     else:
         print("application/octet-stream")
