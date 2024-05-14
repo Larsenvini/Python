@@ -13,8 +13,14 @@ def convert(time):
     hours, minutes = time.split(":")
     hours = int(hours)
     minutes = int(minutes)
-    if hours == 7 and minutes > 0 | minutes < 60:
-        return float(hours, minutes)
+
+    decimal_minutes = minutes / 60
+
+    converted_time = hours + decimal_minutes
+
+    return converted_time
+
+
 
 main()
 
