@@ -1,5 +1,8 @@
 def main():
-    meal = input("What time is it? ").strip(":")
+    meal = input("What time is it? ")
+
+    hours, minutes = meal.split(":")
+
 
     convert(meal)
     if 7 <= meal > 8:
