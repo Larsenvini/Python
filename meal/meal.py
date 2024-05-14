@@ -1,7 +1,7 @@
 def main():
     meal = input("What time is it? ")
     convert(meal)
-    if 7 <= meal > 8:
+    if 7 <= (meal) > 8:
         print("breakfast")
 
 
