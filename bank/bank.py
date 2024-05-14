@@ -1,4 +1,3 @@
-from keyword import iskeyword
 greeting = input("Greet your client ").strip().lower()
 def main():
     if greeting == "hello":
