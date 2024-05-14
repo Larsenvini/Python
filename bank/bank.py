@@ -3,10 +3,10 @@ def main():
 
 
     match greeting:
-        case "Hello":
+        case "hello":
             print("$0")
 
-        case "Hey" | "Hi" | "Hey there":
+        case "hey" | "hi" | "hey there":
             print("$20")
 
         case _:
