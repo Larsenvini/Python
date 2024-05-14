@@ -11,6 +11,8 @@ def main():
 
 def convert(time):
     hours, minutes = time.split(":")
+    hours = int(hours)
+    minutes = int(minutes)
     if hours == 7 and minutes > 0 | minutes < 60:
         return float(hours, minutes)
 
