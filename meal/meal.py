@@ -1,8 +1,10 @@
 def main():
     meal = input("What time is it? ")
     converted_time = convert(meal)
-    if 7 <= converted_time and converted_time > 8:
-            print("breakfast")
+
+    if 7 <= converted_time and converted_time <= 8:
+        print("breakfast")
+
     elif 12 <= converted_time and converted_time> 13:
             print("lunch")
     elif 18 <= converted_time and converted_time > 19:
