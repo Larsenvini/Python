@@ -1,9 +1,21 @@
 def main():
     meal = input("What time is it? ")
-    converted_time = convert(meal)
-    print(f"{converted_time:.1f}")
+    convert(meal)
+    meal_definer(meal)
+    print(meal)
 
 
+
+
+def meal_definer(food):
+    if 7 <= food > 8:
+        print("breakfast")
+    elif 12 <= food > 13:
+        print("lunch")
+    elif 18 <= food > 19:
+        print("dinner")
+    else:
+        print(" ")
 
 
 #:## a.m. and ##:## a.m.
