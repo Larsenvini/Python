@@ -12,7 +12,7 @@ def main():
 
 def convert(time):
     hours, minutes = time.split(":")
-    if hours == 7 and minutes > 0 | < 60:
+    if hours == 7 and minutes > 0 | minutes < 60:
         return float()
 
 main()
