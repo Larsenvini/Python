@@ -1,15 +1,13 @@
 def main():
     greeting = input("Greet your client ").strip().lower()
 
+if str.startswith("hello"):
+    print("$0")
 
-    match greeting:
-        case "hello":
-            print("$0")
+elif str.startswith("h"):
+    print("$20")
 
-        case "hey" | "hi" | "hey there":
-            print("$20")
-
-        case _:
-            print("$100")
+else:
+    print("$100")
 
 main()
