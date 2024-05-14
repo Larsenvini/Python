@@ -1,5 +1,4 @@
-def main():
-    expression = input("Expression: ")
+expression = input("Expression: ")
 x, y, z = expression.split(" ")
 
 x = int(x)
@@ -13,6 +12,5 @@ if y == "+":
     formatted_expression = "${:.1f}".format(expression)
 
 print(f"Leave{formatted_expression}")
-
 
 
