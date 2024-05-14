@@ -1,8 +1,9 @@
+from keyword import iskeyword
 def main():
     input("Greet your client ").strip().lower()
 
 
-if str.startswith("hello"):
+if str.isidentifier(), iskeyword("hello"):
     print("$0")
 
 elif str.startswith("h"):
