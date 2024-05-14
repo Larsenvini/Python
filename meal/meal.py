@@ -1,7 +1,8 @@
 def main():
     meal = input("What time is it? ")
-    convert(meal)
-    print(meal)
+    converted_time = convert(meal)
+    print(f"{converted_time:.1f}")
+
 
 
 
