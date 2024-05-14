@@ -1,4 +1,4 @@
 mediatype = input("File name: ")
 def main():
-    if mediatype:
-        
+    if mediatype.endwith(".gif", ".jpg", ".jpeg", ".png"):
+
