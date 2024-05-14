@@ -3,7 +3,7 @@ def main():
     if mediatype.endswith("gif"):
         print("image/gif")
 
-    elif mediatype.endswith(".jpg" or ".jpeg"):
+    elif mediatype.endswith(".jpg, .jpeg"):
         print("image/jpeg")
 
     elif mediatype.endswith(".png"):
