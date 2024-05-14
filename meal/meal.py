@@ -3,13 +3,15 @@ def main():
     convert(meal)
 
 
+
 #:## a.m. and ##:## a.m.
 #:## p.m. and ##:## p.m.
 
 
 def convert(time):
     hours, minutes = time.split(":")
-    
+if hours in range 
+
 
 main()
 
