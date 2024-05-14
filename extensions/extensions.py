@@ -1,4 +1,4 @@
-mediatype = input("File name: ")
+mediatype = input("File name: ").lower().strip()
 def main():
     if mediatype.endswith("gif"):
         print("image/gif")
