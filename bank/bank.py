@@ -3,7 +3,7 @@ def main():
     if greeting == "hello":
         print("$0")
 
-    elif str.startswith("h"):
+    elif greeting.startswith("h"):
         print("$20")
 
     else:
