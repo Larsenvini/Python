@@ -6,13 +6,10 @@ def main():
         case "Hello":
             print("$0")
 
-        case find("h"):
+        case "Hey" | "Hi" | "Hey there":
             print("$20")
 
         case _:
             print("$100")
-
-def find(n):
-    n = str.find("h")
 
 main()
