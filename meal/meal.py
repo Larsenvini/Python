@@ -1,9 +1,9 @@
 def main():
-    input("What time is it? ")
+    meal = input("What time is it? ")
+    convert(meal)
 
 #:## a.m. and ##:## a.m.
 #:## p.m. and ##:## p.m.
-
 
 def convert(time):
     ...
