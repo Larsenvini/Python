@@ -12,8 +12,8 @@ def main():
 
 
 def convert(time):
-
-    return float(time)
+    if 7 <= time > 8:
+        return float(time)
 
 
 main()
