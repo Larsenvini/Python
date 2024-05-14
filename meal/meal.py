@@ -5,9 +5,9 @@ def main():
     if 7 <= converted_time and converted_time <= 8:
         print("breakfast")
 
-    elif 12 <= converted_time and converted_time> 13:
+    elif 12 <= converted_time and converted_time <= 13:
             print("lunch")
-    elif 18 <= converted_time and converted_time > 19:
+    elif 18 <= converted_time and converted_time <= 19:
             print("dinner")
     else:
             print(" ")
