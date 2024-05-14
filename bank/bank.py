@@ -1,9 +1,9 @@
 from keyword import iskeyword
 def main():
-    input("Greet your client ").strip().lower()
+    greeting = input("Greet your client ").strip().lower()
 
 
-if str.
+if greeting == "hello":
     print("$0")
 
 elif str.startswith("h"):
