@@ -5,12 +5,10 @@ x = int(x)
 z = int(z)
 
 if y == "+":
-    print(x + z)
+    print("${:.1f}".format(expression))
 
 
 
-    formatted_expression = "${:.1f}".format(expression)
-
-print(f"Leave{formatted_expression}")
+    
 
 
