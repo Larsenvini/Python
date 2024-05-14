@@ -1,25 +1,24 @@
 mediatype = input("File name: ")
 def main():
-    match mediatype:
-        case ".gif":
-            print("image/gif")
+    if mediatype.endswith("gif"):
+        print("image/gif")
 
-        case ".jpg" | ".jpeg":
-            print("image/jpeg")
+    elif mediatype.endswith(".jpg", ".jpeg"):
+        print("image/jpeg")
 
-        case ".png":
-            print("image/png")
+    elif mediatype.endswith(".png"):
+        print("image/png")
 
-        case ".pdf":
-            print("image/pdf")
+    elif mediatype.endswith(".pdf"):
+        print("image/pdf")
 
-        case ".txt":
-            print("image/txt")
+    elif mediatype.endswith(".txt"):
+        print("image/txt")
 
-        case ".zip":
-            print("image/zip")
+    elif mediatype.endswith(".zip"):
+        print("image/zip")
 
-        case _:
-            print("application/octet-stream")
+    else:
+        print("application/octet-stream")
 
 main()
