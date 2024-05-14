@@ -10,8 +10,8 @@ def main():
 
 def convert(time):
     hours, minutes = time.split(":")
-if hours in range 
-
+if 7 <= time >= 8:
+    print("breakfast")
 
 main()
 
