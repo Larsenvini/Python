@@ -1,5 +1,6 @@
 def main():
-    meal = input("What time is it? ")
+    meal = input("What time is it? ").strip(":")
+
     convert(meal)
     if 7 <= meal > 8:
         print("breakfast")
@@ -11,7 +12,7 @@ def main():
 
 
 def convert(time):
-    hours, minutes = time.split(":")
+
     return float(time)
 
 
