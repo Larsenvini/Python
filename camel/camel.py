@@ -1,9 +1,9 @@
 def main():
     convert = input(": ")
-    return convert.lower()
+    return convert.lower().replace()
     for c in s:
 
-        
+
 
 
 
