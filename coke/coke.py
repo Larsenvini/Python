@@ -8,11 +8,12 @@ while amount_due != 0:
         amount_due = amount_due - 10
     elif pay == '5':
         amount_due = amount_due - 5
+        owed = pay
 
 
     if amount_due <= 0:
-        change_owed = pay 
-    print("Change Owed:", change_owed)
+
+        print("Change Owed:", pay)
 
 
 
