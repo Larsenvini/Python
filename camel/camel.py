@@ -1,7 +1,14 @@
 def main():
-    convert = input(": ")
-    return convert.lower().replace()
-    for c in s:
+    convert = input(": ").lower()
+    add_(convert)
+    print (convert)
+
+def add_(s):
+    s.join('_' + s if s = isupper())
+
+
+
+
 
 
 
