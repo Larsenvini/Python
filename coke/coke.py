@@ -2,19 +2,20 @@ amount_due = 50
 while amount_due != 0:
     print("Amount due:", amount_due)
     pay = input("Insert coin: ")
-    if pay = ()'25'):
+    if pay == '25':
         amount_due = amount_due - 25
-    elif pay = ('10'):
+    elif pay == '10':
         amount_due = amount_due - 10
-
-    elif pay = ('5'):
+    elif pay == '5':
         amount_due = amount_due - 5
 
 
     if amount_due <= 0:
-        break
+        change_owed = pay 
+    print("Change Owed:", change_owed)
 
-    print("Change Owed:", amount_due)
+
+
 
 
 
