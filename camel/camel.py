@@ -4,8 +4,8 @@ def main():
     print (converted)
 
 def add_(arroba):
-    "".join('_' + i if i.isupper() else i for i in arroba)
-    return
+    return "".join('_' + i if i.isupper() else i for i in arroba)
+
 
 main()
 
