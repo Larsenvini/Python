@@ -4,7 +4,7 @@ def main():
     print (convert)
 
 def add_(s):
-    s.join('_' + s if s = isupper())
+    s.join('_' + s if s.isupper())
 
 
 
