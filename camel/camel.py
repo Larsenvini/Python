@@ -1,6 +1,8 @@
 def main():
-    convert = input("Type something in camel case: ").lower().
-    print (convert)
+    for convert in input("Type something in camel case: "):
+        print(convert, end = "").lower()
+
+
 
 main()
 
