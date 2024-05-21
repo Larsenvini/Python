@@ -1,5 +1,6 @@
 giria = input("Input: ")
-result = giria.strip("aeiou")
-print (result)
+vogals = ["a", "e", "i", "o", "u"]
+giria = giria.strip(vogals)
+print (giria)
 
 
