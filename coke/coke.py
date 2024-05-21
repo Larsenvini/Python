@@ -11,7 +11,7 @@ while amount_due != 0:
         owed = pay
 
 
-    if amount_due <= 0:
+    if amount_due < 0:
 
         print("Change Owed:", pay)
 
