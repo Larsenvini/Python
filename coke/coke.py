@@ -10,7 +10,10 @@ while amount_due > 0:
         amount_due = amount_due - 5
         owed = pay
     else:
-        print("Invalid coin, please insert 25c, 10c or 5c only.")
+        amount_due = amount_due
+
+if amount_due == 0:
+    print("Change Owed: 0")
 
 
 
