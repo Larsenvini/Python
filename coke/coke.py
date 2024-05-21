@@ -1,6 +1,6 @@
 amount_due = 50
 while amount_due > 0:
-    print("Amount due:", amount_due)
+    print("Amount Due:", amount_due)
     pay = input("Insert coin (25c, 10c or 5c): ")
     if pay == '25':
         amount_due = amount_due - 25
