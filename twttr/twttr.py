@@ -1,3 +1,4 @@
-giria = input("Input: ").strip("AEIOUaeiou")
-print (giria)
+giria = input("Input: ")
+result = giria.strip("AEIOUaeiou")
+print (result)
 
