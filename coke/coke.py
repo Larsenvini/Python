@@ -12,10 +12,8 @@ while amount_due > 0:
     else:
         print("Invalid coin, please insert 25c, 10c or 5c only.")
 
-if amount_due == 0:
-    print("Payment complete, Thank you!")
-else:
-    print("Oops, the customer overpaid! Change owed:", amount_due)
+if amount_due < 0:
+    print("Change Owed:", amount_due)
 
 
 
