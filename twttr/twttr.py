@@ -1,4 +1,5 @@
 giria = input("Input: ")
-result = giria.strip('[AEIOUaeiou]')
+result = giria.strip("aeiou")
 print (result)
+
 
