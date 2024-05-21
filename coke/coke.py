@@ -12,8 +12,11 @@ while amount_due > 0:
     else:
         print("Invalid coin, please insert 25c, 10c or 5c only.")
 
+
+
 if amount_due < 0:
-    print("Change Owed:", abs(amount_due))
+   float(amount_due)
+   print("Change Owed:", abs(amount_due))
 
 
 
