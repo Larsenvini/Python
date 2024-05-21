@@ -1,10 +1,11 @@
 giria = input("Input: ")
-vogals = giria.maketrans()
 vogals = {"a" : "",
            "e" : "",
              "i": "",
                "o" : "",
                  "u" : ""}
+vog = giria.maketrans(vogals)
+
 giria = giria.translate(vogals)
 print (giria)
 
