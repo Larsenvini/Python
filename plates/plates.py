@@ -7,4 +7,4 @@ def main():
 
 def is_valid(algo):
     if algo.startswith(int):
-        retur
+        
