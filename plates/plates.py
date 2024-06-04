@@ -5,4 +5,5 @@ def main():
     else:
         print("Not Valid")
 
-d
+def is_valid(algo):
+    if algo 
