@@ -7,6 +7,11 @@ def main():
 
 def is_valid(algo):
     alg1, alg2 = algo.partition(2)
-    if alg1.isalpha[0]:
-        
+    if alg1.isalpha():
+
+        if len(alg1) >= 2:
+            return True
+        else:
+            return False
+
 
