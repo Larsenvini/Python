@@ -6,7 +6,9 @@ def main():
         print("Not Valid")
 
 def is_valid(algo):
-    alg1, alg2 = algo.partition(2)
+    half_lenght = len(algo) // 2
+    alg1 = algo[:half_lenght]
+    alg2 = algo[half_lenght:]
     if alg1.isalpha():
 
         if len(alg1) == 2:
