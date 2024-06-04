@@ -6,4 +6,4 @@ def main():
         print("Not Valid")
 
 def is_valid(algo):
-    if algo 
+    algo.split()
