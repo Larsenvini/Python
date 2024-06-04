@@ -19,4 +19,4 @@ def is_valid(algo):
         else:
             return False
 
-
+main()
