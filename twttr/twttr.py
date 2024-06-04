@@ -6,7 +6,7 @@ vogals = {"a" : "",
                  "u" : ""}
 vog = giria.maketrans(vogals)
 
-giria = giria.translate(vogals)
+giria = giria.translate(vog)
 print (giria)
 
 
