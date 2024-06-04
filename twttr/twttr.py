@@ -3,7 +3,9 @@ vogals = {"a" : "",
            "e" : "",
              "i": "",
                "o" : "",
-                 "u" : ""}
+                 "u" : "",
+                 "O" : ""}
+
 vog = giria.maketrans(vogals)
 
 giria = giria.translate(vog)
