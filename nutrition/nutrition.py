@@ -24,7 +24,7 @@ fruit = input("Input a fruit name: ").lower()
 
 if fruit in (key.lower() for key in calories):  # Convert dictionary keys to lower case for comparison
     calories_count = calories[next(key for key in calories if key.lower() == fruit)]
-    print(f"The calorie count for {fruit.title()} is {calories_count}")  # Print title case for the fruit name
+    print(calories_count)  # Print title case for the fruit name
 else:
     print("")
 
