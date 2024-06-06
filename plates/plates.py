@@ -3,7 +3,7 @@ def main():
     if is_valid(plate):
         print("Valid")
     else:
-        print("Not Valid")
+        print("Invalid")
 
 def is_valid(algo):
     half_lenght = len(algo) // 2
