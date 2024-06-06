@@ -19,10 +19,15 @@ calories = {"Apple" : "130",
                  "Sweet Cherries":"100",
                  "Tangerine":"50",
                  "Watermelon":"80",
-
                  }
 
-per_fruit = fruit.maketrans(calories)
+# Create a translation table for fruit names to their respective calorie counts
+translation_table = str.maketrans(calories)
 
-fruit = fruit.translate(per_fruit)
-print (fruit)
+fruit = input("Input a fruit name: ")
+
+# Use the translation table with the translate method
+calories_count = fruit.translate(translation_table)
+
+print(calories_count)
+
