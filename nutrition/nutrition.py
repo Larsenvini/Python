@@ -14,11 +14,11 @@ calories = {"Apple" : "130",
                  "Peach":"60",
                  "Pear":"100",
                  "Pineapple":"50",
-                 "Plums":"",
-                 "Strawberries":"",
-                 "":"",
-                 "":"",
-                 "":"",
+                 "Plums":"70",
+                 "Strawberries":"50",
+                 "Sweet Cherries":"100",
+                 "Tangerine":"50",
+                 "Watermelon":"80",
 
                  }
 
