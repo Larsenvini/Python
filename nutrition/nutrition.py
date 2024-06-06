@@ -20,11 +20,11 @@ calories = { "Apple" : "130",
              "Tangerine":"50",
              "Watermelon":"80" }
 
-fruit = input("Input a fruit name: ")
+fruit = input("Input a fruit name: ").lower()
 
-if fruit in calories:
-    calories_count = calories[fruit]
-    print(calories_count)
+if fruit in (key.lower() for key in calories):  # Convert dictionary keys to lower case for comparison
+    calories_count = calories[next(key for key in calories if key.lower() == fruit)]
+    print(f"The calorie count for {fruit.title()} is {calories_count}")  # Print title case for the fruit name
 else:
     print("")
 
