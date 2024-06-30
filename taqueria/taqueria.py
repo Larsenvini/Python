@@ -10,9 +10,10 @@ prices = {
     "Tortilla Salad": 8.00}
 
 def main():
+    total = 0.0
         while True:
             try:
-                order = input("Item: ").lower()
+                order = input("Item: ").strip().lower()
 
                 if order in (key.lower() for key in prices):
                     prices_count = prices[next(key for key in prices if key.lower() == order)]
