@@ -13,6 +13,6 @@ order = input("Item: ").lower()
 
 if order in (key.lower() for key in prices):
     prices_count = prices[next(key for key in prices if key.lower() == order)]
-    print(prices_count)  # Print title case for the fruit name
+    print("Total: {prices_count}")
 else:
     print("")
