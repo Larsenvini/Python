@@ -15,11 +15,12 @@ def main():
 def get_fraction(prompt):
     while True:
         try:
-            fuel = int(input(prompt))
-            break
+            return int(input(prompt))
         except ValueError:
             pass
         except ZeroDivisionError:
             pass
+        else:
+            break
 
 main()
