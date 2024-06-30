@@ -13,6 +13,6 @@ order = input("Item: ").lower()
 
 if order in (key.lower() for key in prices):
     prices_count = prices[next(key for key in prices if key.lower() == order)]
-    print("Total: {prices_count}")
+    print(f"Total: {prices_count}")
 else:
     raise ValueError
