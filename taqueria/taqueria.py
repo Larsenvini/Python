@@ -15,4 +15,4 @@ if order in (key.lower() for key in prices):
     prices_count = prices[next(key for key in prices if key.lower() == order)]
     print("Total: {prices_count}")
 else:
-    print("")
+    raise ValueError
