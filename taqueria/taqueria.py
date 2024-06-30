@@ -9,5 +9,10 @@ prices = {
     "Taco": 3.00,
     "Tortilla Salad": 8.00}
 
-order = input("Item: ").lower() 
+order = input("Item: ").lower()
 
+if order in (key.lower() for key in prices):
+    prices_count = prices[next(key for key in prices if key.lower() == order)]
+    print(prices_count)  # Print title case for the fruit name
+else:
+    print("")
