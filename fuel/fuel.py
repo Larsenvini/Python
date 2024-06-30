@@ -7,7 +7,9 @@ def main():
     elif fuel == "3/4":
         print("75%")
     elif fuel == "4/4":
-        
+        print("F")
+    elif fuel == "0/4":
+        print("E")
 
 def get_fraction():
     try:
