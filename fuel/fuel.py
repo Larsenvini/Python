@@ -13,10 +13,12 @@ def main():
 
 
 def get_fraction(prompt):
-    try:
-        return int(input(prompt))
-    except ValueError:
-        pass
-    except ZeroDivisionError:
-        pass
+    while True:
+        try:
+            fuel = int(input(prompt))
+        except ValueError:
+            pass
+        except ZeroDivisionError:
+            pass
+
 main()
