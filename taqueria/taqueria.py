@@ -7,7 +7,8 @@ prices = {
     "Super Burrito": 8.50,
     "Super Quesadilla": 9.50,
     "Taco": 3.00,
-    "Tortilla Salad": 8.00}
+    "Tortilla Salad": 8.00
+}
 
 def main():
     total = 0.0  # Initialize total to keep track of the sum of prices
@@ -20,9 +21,10 @@ def main():
                 total += prices[order]  # Add the item's price to the total
                 print(f"Total: ${total:.2f}")  # Print the running total
             else:
-                raise ValueError  # Raise ValueError if the item is not found in prices
+                print("Invalid item. Please enter a valid item from the menu.")  # Inform user of invalid input
 
-        except ValueError:
-            pass  # If a ValueError is raised, continue the loop and prompt again
+        except EOFError:
+            print()  # Print a newline when EOF is encountered
+            break  # Exit the loop when EOF is encountered
 
 main()
