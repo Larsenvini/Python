@@ -16,6 +16,7 @@ def get_fraction(prompt):
     while True:
         try:
             fuel = int(input(prompt))
+            break
         except ValueError:
             pass
         except ZeroDivisionError:
