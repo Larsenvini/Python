@@ -9,10 +9,16 @@ prices = {
     "Taco": 3.00,
     "Tortilla Salad": 8.00}
 
-order = input("Item: ").lower()
+def main():
+        while True:
+            try:
+                order = input("Item: ").lower()
 
-if order in (key.lower() for key in prices):
-    prices_count = prices[next(key for key in prices if key.lower() == order)]
-    print(f"Total: {prices_count}")
-else:
-    raise ValueError
+                if order in (key.lower() for key in prices):
+                    prices_count = prices[next(key for key in prices if key.lower() == order)]
+                    print(f"Total: {prices_count}")
+                else:
+                     raise ValueError
+            except ValueError:
+                break
+main()
