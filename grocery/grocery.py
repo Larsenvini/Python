@@ -4,3 +4,7 @@ def main():
             item = input()
         except EOFError:
             break
+
+        item = {
+            
+        }
