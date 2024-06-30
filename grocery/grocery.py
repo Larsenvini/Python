@@ -1,4 +1,6 @@
 def main():
     while True:
-        list = input("")
-        
+        try:
+            item = input()
+        except EOFError:
+            break
