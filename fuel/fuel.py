@@ -4,7 +4,13 @@ def main():
         percentage = convert_to_percentage(fraction)
         if percentage <= 1:
             print("E")
-            elif percentage 
+        elif percentage >= 99:
+            print("F")
+        else:
+            print(f"{percentage}%")
+            break
+    except(ValueError, ZeroDivisionError):
+        continue
 
 
 def get_fraction(prompt):
