@@ -11,9 +11,12 @@ def main():
     elif fuel == "0/4":
         print("E")
 
+
 def get_fraction(prompt):
     try:
         return int(input(prompt))
-    except:
+    except ValueError:
+        pass
+    except ZeroDivisionError:
         pass
 main()
