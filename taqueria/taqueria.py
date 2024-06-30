@@ -17,8 +17,11 @@ def main():
                 if order in (key.lower() for key in prices):
                     prices_count = prices[next(key for key in prices if key.lower() == order)]
                     print(f"Total: {prices_count}")
-                else:
+                elif order not in prices:
                      raise ValueError
+                else:
+                     break
+
             except ValueError:
-                break
+                pass
 main()
