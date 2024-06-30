@@ -10,19 +10,19 @@ prices = {
     "Tortilla Salad": 8.00}
 
 def main():
-    total = 0.0
-        while True:
-            try:
-                order = input("Item: ").strip().lower()
+    total = 0.0  # Initialize total to keep track of the sum of prices
 
-                if order in (key.lower() for key in prices):
-                    prices_count = prices[next(key for key in prices if key.lower() == order)]
-                    print(f"Total: {prices_count}")
-                elif order not in prices:
-                     raise ValueError
-                else:
-                     break
+    while True:
+        try:
+            order = input("Item: ").strip().title()  # Use .title() to match the keys' format
 
-            except ValueError:
-                pass
+            if order in prices:
+                total += prices[order]  # Add the item's price to the total
+                print(f"Total: ${total:.2f}")  # Print the running total
+            else:
+                raise ValueError  # Raise ValueError if the item is not found in prices
+
+        except ValueError:
+            pass  # If a ValueError is raised, continue the loop and prompt again
+
 main()
