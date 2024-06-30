@@ -22,7 +22,7 @@ def convert_to_percentage(prompt):
     y = int(y)
 
     if x > y:
-        raise ZeroDIvisionError
+        raise ZeroDivisionError
 
     if y == 0:
         raise ValueError
