@@ -1,5 +1,5 @@
 def main():
-    fuel = get_fraction()
+    fuel = get_fraction("Fraction: ")
     if fuel == "1/4":
         print("25%")
     elif fuel == "2/4":
@@ -11,8 +11,9 @@ def main():
     elif fuel == "0/4":
         print("E")
 
-def get_fraction():
+def get_fraction(prompt):
     try:
-        return int(input("Fraction:"))
+        return int(input(prompt))
     except:
         pass
+main()
