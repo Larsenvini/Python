@@ -1,15 +1,9 @@
-def main():
-    while True:
-        try:
-            item = input()
-        except EOFError:
-            break
-        for fruit in item:
-            print(fruit).upper()
+grocery_list = {}
 
-        item = {
+while True:
+    try:
+        item = input().strip().lower()
+        if item 
+    except EOFError:
+        break
 
-        }
-
-    
-main()
