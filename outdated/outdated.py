@@ -12,11 +12,11 @@ months = [
     "November",
     "December"
 ]
-
+month, day, year = date.split)"/"
 while True:
     try:
         date = input().strip().lower()
-        if da in grocery_list:
+        if date in grocery_list:
             grocery_list[item] += 1
         else:
             grocery_list[item] = 1
