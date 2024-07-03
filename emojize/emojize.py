@@ -1,5 +1,5 @@
-import sys
 import cowsay
+import sys
 
 try:
     if len(sys.argv) < 2:
