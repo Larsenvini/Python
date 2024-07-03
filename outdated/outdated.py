@@ -28,4 +28,4 @@ def get_date():
             except ValueError:
                 pass
 
-            
+        match = re.match(r'^)
