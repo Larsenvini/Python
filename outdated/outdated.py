@@ -32,11 +32,13 @@ def get_date():
 
         if match:
             month_str, day, year = match.groups()
+            if month_str in months:
+                month = months.index(month_str) + 1
             try:
                 return f"{int(year):04d}-{int(month):02d}-{int(day):02d}"
             except ValueError:
                 pass
 
 if __name__ == "__main__":
-    valid_date = get_valid_date()
+    valid_date = get_date()
     print(valid_date)
