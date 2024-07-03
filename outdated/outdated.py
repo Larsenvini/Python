@@ -1,14 +1,14 @@
 import re
 
 months = [
-    "January", "February", "March", "April", "May", "June",
+    "January", "February", "March", "April", "May", "June", 
     "July", "August", "September", "October", "November", "December"
 ]
 
 def get_date():
     while True:
-        date_str = input().strip()
-
+        date_str = input("Enter a date (MM/DD/YYYY or Month DD, YYYY): ").strip()
+        
         # Try to match numerical month format (e.g., 9/8/1636)
         match = re.match(r'^(\d{1,2})/(\d{1,2})/(\d{4})$', date_str)
         if match:
@@ -33,7 +33,8 @@ def get_date():
                 except ValueError:
                     pass  # If conversion fails, prompt again
 
+        print("Invalid date format. Please try again.")
+
 if __name__ == "__main__":
     valid_date = get_date()
     print(valid_date)
-
