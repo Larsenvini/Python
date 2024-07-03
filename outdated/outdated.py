@@ -28,4 +28,4 @@ def get_date():
             except ValueError:
                 pass
 
-        match = re.match(r'^)
+        match = re.match(r'^(\w+) (\d{1,2}), (\d{1.2})')
