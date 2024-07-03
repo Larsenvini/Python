@@ -10,3 +10,9 @@ while True:
     except EOFError:
         break
 
+sorted_items = sorted(grocery_list.keys())
+
+print("\nGrocery List:")
+
+for item in sorted_items:
+    print(f"{grocery_list[item]} {item.upper()}")
