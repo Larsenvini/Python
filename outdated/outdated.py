@@ -36,3 +36,7 @@ def get_date():
                 return f"{int(year):04d}-{int(month):02d}-{int(day):02d}"
             except ValueError:
                 pass
+
+if __name__ == "__main__":
+    valid_date = get_valid_date()
+    print(valid_date)
