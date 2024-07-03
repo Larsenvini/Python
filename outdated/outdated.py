@@ -18,4 +18,5 @@ months = [
 def get_date():
     while True:
         date_st = input().strip()
-        
+
+        match = re.match(r'^(\d{1,2})/(\d{1,2})/(\d{4})$', date_str)
