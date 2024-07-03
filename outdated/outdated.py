@@ -29,3 +29,10 @@ def get_date():
                 pass
 
         match = re.match(r'^(\w+) (\d{1,2}), (\d{4})$', date_str)
+
+        if match:
+            month_str, day, year = match.groups()
+            try:
+                return f"{int(year):04d}-{int(month):02d}-{int(day):02d}"
+            except ValueError:
+                pass
