@@ -1,4 +1,6 @@
 import sys
+import cowsay
+
 try:
     if len(sys.argv) < 2:
         print('too few arguments')
