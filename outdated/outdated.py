@@ -20,3 +20,8 @@ def get_date():
         date_st = input().strip()
 
         match = re.match(r'^(\d{1,2})/(\d{1,2})/(\d{4})$', date_str)
+
+        if match:
+            month, day, year = match.groups()
+            try:
+                
