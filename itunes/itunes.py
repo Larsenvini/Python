@@ -1,7 +1,8 @@
 import requests
 import sys
-
 def main():
+    opa("weezer")
+def opa():
     if len(sys.argv) != 2:
         sys.exit()
 
