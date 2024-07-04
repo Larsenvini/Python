@@ -12,6 +12,16 @@ def main():
         if sys.argv[1] in ['-f', '--font'] and sys.argv[2] in available_fonts:
             font = sys.argv[2]
         else:
-            sys.exit("Error: Invalid font")
+            sys.exit("Invalid usage")
+    else:
+        sys.exit("Usage: figlet.py [-f FONT_NAME]")
 
+    text = input("Input: ")
+
+    figlet = pyfiglet.Figlet(font=font)
+
+    print(figlet.renderText(text))
+
+    if __name__ == '__main__':
+        main()
 
