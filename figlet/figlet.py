@@ -9,6 +9,9 @@ def main():
         font = random.choice(available_fonts)
 
     elif len(sys.argv) == 3:
-        if a
+        if sys.argv[1] in ['-f', '--font'] and sys.argv[2] in available_fonts:
+            font = sys.argv[2]
+        else:
+            sys.exit("Error: Invalid font")
 
 
