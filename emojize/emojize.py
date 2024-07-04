@@ -1,5 +1,5 @@
 import emoji
 
-emoji_code = input(emoji.emojize("Input: "))
+emoji_code = input(emoji.emojize(sys.argv[1]))
 
-print(emoji_code)
+print(sys.argv[1])
