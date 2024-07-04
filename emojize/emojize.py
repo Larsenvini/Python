@@ -1,7 +1,5 @@
 import emoji
 
-emoji_code = input("Input: ")
+emoji_code = input(emoji.emojize("Input: "))
 
-emoji_table = [
-
-]
+print(emoji_code)
