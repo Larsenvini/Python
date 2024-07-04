@@ -1,5 +1,5 @@
 import emoji
-import sys
+
 
 emoji_code = input('')
 
