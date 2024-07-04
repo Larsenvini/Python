@@ -3,6 +3,6 @@ import emoji
 
 emoji_code = input('')
 
-emoji.emojize(emoji_code)
+emojized_code = emoji.emojize(emoji_code)
 
-print(emoji_code)
+print(emojized_code)
