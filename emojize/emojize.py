@@ -1,6 +1,6 @@
 import emoji
 import sys
 
-emoji_code = input(emoji.emojize(sys.argv, language='alias'))
+emoji_code = input(emoji.emojize('', language='alias'))
 
-print(sys.argv[1])
+print(emoji_code)
