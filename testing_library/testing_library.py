@@ -1,3 +1,5 @@
+import sys
 from mylibrary import chama
 
-chama("opa")
+if len(sys.argv) == 2:
+    chama(sys.argv[1])
