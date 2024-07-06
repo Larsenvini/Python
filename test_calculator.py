@@ -10,6 +10,8 @@ def test_square():
         print("3 squared did not equal 9")
     if square(10) != 100:
         print("10 squared did not equal 100")
+    else:
+        print()
 
 if __name__ == '__main__':
     main()
