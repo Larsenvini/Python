@@ -1,3 +1,4 @@
+import pytest
 from calculator import square
 
 def main():
@@ -20,6 +21,11 @@ def test_zero():
 
 def test_decimal():
     assert square(1.5) == 2.25
+
+def test_str():
+    with pytest.raises(TypeError):
+        
+
 
 if __name__ == '__main__':
     main()
