@@ -10,7 +10,7 @@ def main():
 
 
 
-            print(converted_response)
+            print(f"${converted_response:,.4f}")
         except requests.RequestException:
             sys.exit()
     ...
