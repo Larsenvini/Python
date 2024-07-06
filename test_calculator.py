@@ -1,5 +1,8 @@
 from calculator import square
 
+def main():
+    test_square()
+
 def test_square():
     if square(2) != 4:
         print("2 squared did not equal 4")
@@ -8,3 +11,5 @@ def test_square():
     if square(10) != 100:
         print("10 squared did not equal 100")
 
+if __name__ == '__main__':
+    main()
