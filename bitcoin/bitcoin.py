@@ -3,7 +3,7 @@ import requests
 
 def main():
     if len(sys.argv) != 2:
-        sys.exit("Usage: python bitcoin.py <number_of_bitcoins>")
+        sys.exit("Missing command-line argument")
 
     try:
         num_bitcoins = float(sys.argv[1])
