@@ -11,7 +11,7 @@ def test_square():
     if square(10) != 100:
         print("10 squared did not equal 100")
     else:
-        print()
+        print("tudo certo amg")
 
 if __name__ == '__main__':
     main()
