@@ -6,7 +6,8 @@ def main():
 def test_square():
     try:
         assert square(2) == 4
-    except AssertionError
+    except AssertionError:
+        print(")
 
         assert square(3) == 9
 
