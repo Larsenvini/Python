@@ -1,16 +1,15 @@
 import requests
 import sys
 
-if len(sys.argv) != float:
-    sys.exit()
+def convert():
+    
 
-response = requests.get("https://itunes.apple.com/search/?entity=song&limit=1&term=" + sys.argv[1])
-
-print(response.json())
-
-def main()
+def main():
     while True:
         try:
-    ...
+            response = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json" + sys.argv[1])
+
+            print(response.json())
         except requests.RequestException:
+            sys.exit()
     ...
