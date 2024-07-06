@@ -8,7 +8,7 @@ def main():
     try:
         num_bitcoins = float(sys.argv[1])
     except ValueError:
-        sys.exit("Error: The argument must be a number.")
+        sys.exit("Command-line argument is not a number")
 
     try:
         response = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
