@@ -8,7 +8,9 @@ def get_amount(response):
 def convert(response):
     while True:
         try:
-         converted_response = response.float 
+         a = response.float
+         b = input
+         converted_response =
 
         except requests.RequestException:
             sys.exit()
