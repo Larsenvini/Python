@@ -1,10 +1,12 @@
 import pytest
 from bank import greet
-def test_bank():
-    assert
 
+def test_bank(msgn):
+    if msgn.startswith("hello"):
+        assert greet(msgn) == "$0"
 
+    elif msgn.startswith("h"):
+        assert greet(msgn) == "$20"
 
-
-if __name__ == "__main__":
-    main()
+    else:
+        assert greet(msgn) == "$100"
