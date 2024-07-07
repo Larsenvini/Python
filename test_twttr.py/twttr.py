@@ -8,9 +8,8 @@ vogals = {"a" : "",
 
 def main():
     nome = input("Input: ")
-    nome_feito = shorten(nome)
-    output = print(nome_feito)
-    print (output)
+    print(shorten(nome))
+
 
 
 def shorten(giria):
