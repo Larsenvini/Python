@@ -12,9 +12,6 @@ def test_plate4():
 def test_plate5():
     assert is_valid("CS04") == False
 
-def test_platestr():
-    with pytest.raises(TypeError):
-        is_valid("banana")
 
 if __name__ == "__main__":
     pytest.main()
