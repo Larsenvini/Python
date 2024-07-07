@@ -1,6 +1,8 @@
 def main():
 
     greeting = input("Greet your client ").strip().lower()
+    print(greet(greeting))
+
 
 def greet(msg):
     if msg.startswith("hello"):
@@ -12,4 +14,5 @@ def greet(msg):
     else:
         return "$100"
 
-main()
+if __name__ == "__main__":
+    main()
