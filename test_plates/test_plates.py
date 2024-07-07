@@ -1,7 +1,7 @@
 import pytest
 from plates import is_valid
 
-def test_validornah():
+def test_plates():
     assert is_valid("OPAH2340") == False
     assert is_valid("ROB776") == False
     assert is_valid("CS50") == True
