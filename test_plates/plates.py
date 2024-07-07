@@ -21,4 +21,5 @@ def is_valid(algo):
         else:
             return False
 
-main()
+if __name__ == "__main__":
+    main()
