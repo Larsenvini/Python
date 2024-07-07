@@ -1,6 +1,7 @@
 def main():
     name = input("What's your name? ").lower().capitalize()
-    hello(name)
+    print(hello(name))
+
 
 def hello(to = "World"):
      return f"Hello, {to}"
