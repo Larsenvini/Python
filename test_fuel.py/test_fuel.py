@@ -1,3 +1,4 @@
+import pytest
 from fuel import convert
 
 def test_convertion():
@@ -8,3 +9,6 @@ def test_empty():
 
 def test_full():
     assert convert("4/4") == 100
+
+def test_raises():
+    with pytest.raises(ValueError)
