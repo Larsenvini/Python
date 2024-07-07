@@ -2,8 +2,8 @@ import pytest
 from plates import is_valid
 
 def test_validornah():
-    assert is_valid("OPAH2340") == True
-    assert value("hello") == 0
+    assert is_valid("OPAH2340") == False
+    assert is_valid("ROB776") == False
     assert value("Hello there") == 0
 
 def test_h():
