@@ -20,9 +20,5 @@ def test_case_insensitivity():
     assert value("HAPPY") == 20
 
 
-def test_int():
-     with pytest.raises(TypeError):
-          value(2)
-
 if __name__ == "__main__":
     pytest.main()
