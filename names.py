@@ -1,5 +1,5 @@
-names = (input("Whats your name? "))
+names = (input("Whats your name? ").capitalize())
 
 file = open("names.txt", "a")
-file.write(names )
+file.write(f"{names}\n")
 file.close()
