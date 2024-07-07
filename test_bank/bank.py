@@ -1,4 +1,7 @@
 def main():
+
+    greeting = input("Greet your client ").strip().lower()
+    
     if greeting.startswith("hello"):
         print("$0")
 
