@@ -2,8 +2,8 @@ import pytest
 from plates import is_valid
 
 def test_valid_plate1():
-    assert is_valid("CS50") == True
 
+    assert is_valid("CS50") == True
 def test_valid_plate2():
     assert is_valid("HUBA7") == True
 
