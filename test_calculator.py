@@ -24,7 +24,9 @@ def test_decimal():
 
 def test_str():
     with pytest.raises(TypeError):
-        
+        square("cat")
+
+
 
 
 if __name__ == '__main__':
