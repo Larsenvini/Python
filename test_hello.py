@@ -1,8 +1,6 @@
 from hello import hello
 
-def main():
+def test_hello():
     assert hello("Vini") == "Hello, Vini"
     assert hello() == "Hello, World"
 
-if __name__ == "__main__":
-    main()
