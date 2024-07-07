@@ -10,7 +10,7 @@ def test_h(msgn):
         assert greet(msgn) == "$20"
 
 def test_other(msgn):
-    if msgn.startswith("h", "hello") == False:
+    if test_hello() and test_h() == False:
         assert greet(msgn) == "$100"
 
 def test_int():
