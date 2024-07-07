@@ -7,7 +7,7 @@ vogals = {"a" : "",
 
 
 def main():
-    nome = input("Input: ")
+    nome = input("Input: ").capitalize().lower()
     print(shorten(nome))
 
 
