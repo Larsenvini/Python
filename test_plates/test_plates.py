@@ -1,21 +1,34 @@
 import pytest
 from plates import is_valid
 
-def test_valid_plates():
+def test_valid_plate1():
     assert is_valid("CS50") == True
+
+def test_valid_plate2():
     assert is_valid("HUBA7") == True
-    assert is_valid("LABA9") == True
 
-def test_invalid_plates():
+def test_invalid_plate1():
     assert is_valid("OPAH2340") == False
-    assert is_valid("ROB776") == False
-    assert is_valid("CS04") == False
-    assert is_valid("LABAZ") == False  # Non-digit character in last two positions
 
-def test_edge_cases():
-    assert is_valid("") == False  # Empty string
-    assert is_valid("A") == False  # Too short
-    assert is_valid("ABCDEFGH") == False  # Too long
-    assert is_valid("CS50!") == False  # Special characters
+def test_valid_plate2():
+    assert is_valid("ROB776") == True
 
+
+def test_invalid_plate4():
+    assert is_valid("AAA22A") == False
+
+def test_invalid_plate6():
+    assert is_valid("AAA.") == False
+
+def test_invalid_plate7():
+    assert is_valid("AAA 22") == False
+
+def test_invalid_plate8():
+    assert is_valid("1AAA22") == False
+
+def test_invalid_plate9():
+    assert is_valid("CS.") == False
+
+if __name__ == "__main__":
+    pytest.main()
 

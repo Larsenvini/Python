@@ -1,31 +1,38 @@
 def main():
-    plate = input("Vanity Plate: ")
+    plate = input("Enter your vanity plate: ").strip()
     if is_valid(plate):
         print("Valid")
-        return 0  # Returning 0 to indicate success
     else:
         print("Invalid")
-        return 1  # Returning non-zero to indicate failure
 
 def is_valid(s):
-    if len(s) != 6:
+    if not starts_with_letters(s):
         return False
-
-    half_length = len(s) // 2
-    part1 = s[:half_length]
-    part2 = s[half_length:]
-
-    if not part1.isalpha() or len(part1) != 2:
+    if not has_correct_length(s):
         return False
-
-    if not part2.isdigit() or len(part2) != 2:
+    if not numbers_at_end(s):
         return False
+    if contains_only_allowed_characters(s):
+        return True
+    return False
 
-    if '0' in part2:
-        return False
+def starts_with_letters(s):
+    # Check if the string starts with at least two letters
+    return s[:2].isalpha()
 
-    return True
+def has_correct_length(s):
+    # Check if the string has a length between 2 and 6 characters
+    return 2 <= len(s) <= 6
+
+def numbers_at_end(s):
+    # Check if numbers are only at the end of the string
+    if s[-1].isdigit():
+        return True
+    return False
+
+def contains_only_allowed_characters(s):
+    # Check if the string contains only uppercase letters and digits
+    return s.isalnum() and s.isupper()
 
 if __name__ == "__main__":
-    import sys
-    sys.exit(main())
+    main()
