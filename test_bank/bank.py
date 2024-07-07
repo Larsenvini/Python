@@ -1,10 +1,15 @@
 def main():
 
-    greeting = input("Greet your client ").strip().lower()
+    greeting = input("Greet your client ").strip()
     print(value(greeting))
 
 
 def value(msg):
+    if not isinstance(msg, str):
+        raise TypeError("Input must be a string")
+
+    msg = msg.lower()
+
     if msg.startswith("hello"):
         return "$0"
 
