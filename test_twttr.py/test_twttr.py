@@ -1,4 +1,4 @@
 from twttr import shorten
 
-def main():
+def test_transf():
     assert shorten("Twitter")
