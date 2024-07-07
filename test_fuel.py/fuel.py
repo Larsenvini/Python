@@ -16,10 +16,10 @@ def convert(prompt):
     y = int(y)
 
     if x > y:
-        raise ZeroDivisionError
+        raise ValueError
 
     if y == 0:
-        raise ValueError
+        raise ZeroDivisionError
 
     percentage = (x / y) * 100
 

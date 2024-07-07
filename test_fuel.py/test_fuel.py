@@ -11,11 +11,11 @@ def test_full():
     assert convert("4/4") == 100
 
 def test_raises():
-    with pytest.raises(ValueError):
-        convert("1/0")
-        
-def test_raises2():
     with pytest.raises(ZeroDivisionError):
+        convert("1/0")
+
+def test_raises2():
+    with pytest.raises(ValueError):
         convert("5/4")
 
 def test_gauge_empty():
