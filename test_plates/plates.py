@@ -5,21 +5,22 @@ def main():
     else:
         print("Invalid")
 
-def is_valid(algo):
-    half_lenght = len(algo) // 2
-    alg1 = algo[:half_lenght]
-    alg2 = algo[half_lenght:]
-    if alg1.isalpha():
+def is_valid(s):
+     if len(s) != 6:
+        return False
+     half_lenght = len(s) // 2
 
-        if len(alg1) == 2:
-            return True
-        else:
-            return False
-    if alg2.isdigit():
-        if len(alg2) == 2:
-            return True
-        else:
-            return False
+     part1 = s[:half_lenght]
+     part2 = s[half_lenght:]
+
+     if not part1.isalpha() or len(part1) != 2:
+        return False
+
+     if not part2.isdigit() or len(part2) != 2:
+        return False
+
+     if '0' in part2:
+         return False
 
 if __name__ == "__main__":
     main()
