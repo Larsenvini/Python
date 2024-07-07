@@ -11,8 +11,9 @@ def test_h(msgn):
 
 def test_other(msgn):
         try:
-             test_hello()
-             test_h()
-             
+             if msgn != msgn.startswith("h", "hello"):
+                assert greet(msgn) == "$100"
 
-        assert greet(msgn) == "$100"
+def test_int():
+     with pytest.raises(TypeError):
+          greet("2")
