@@ -5,10 +5,10 @@ def main():
 
 
 def greet(msg):
-    if msg.startswith("hello"):
+    if msg.startswith("hello", "Hello", "HELLO"):
         return "$0"
 
-    elif msg.startswith("h"):
+    elif msg.startswith("h", "H"):
         return "$20"
 
     else:
