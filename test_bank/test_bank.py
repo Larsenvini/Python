@@ -10,9 +10,8 @@ def test_h(msgn):
         assert greet(msgn) == "$20"
 
 def test_other(msgn):
-        try:
-             if msgn != msgn.startswith("h", "hello"):
-                assert greet(msgn) == "$100"
+    if msgn.startswith("h", "hello") == False:
+        assert greet(msgn) == "$100"
 
 def test_int():
      with pytest.raises(TypeError):
