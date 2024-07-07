@@ -8,6 +8,7 @@ def main():
 def is_valid(s):
      if len(s) != 6:
         return False
+     
      half_lenght = len(s) // 2
 
      part1 = s[:half_lenght]
@@ -21,6 +22,8 @@ def is_valid(s):
 
      if '0' in part2:
          return False
+
+     return True
 
 if __name__ == "__main__":
     main()
