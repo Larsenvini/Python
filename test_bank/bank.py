@@ -1,14 +1,15 @@
 def main():
 
     greeting = input("Greet your client ").strip().lower()
-    
-    if greeting.startswith("hello"):
-        print("$0")
 
-    elif greeting.startswith("h"):
-        print("$20")
+def greet(msg):
+    if msg.startswith("hello"):
+        return "$0"
+
+    elif msg.startswith("h"):
+        return "$20"
 
     else:
-        print("$100")
+        return "$100"
 
 main()
