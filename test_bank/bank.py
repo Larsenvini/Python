@@ -1,7 +1,7 @@
 def main():
 
     greeting = input("Greet your client ").strip()
-    print(value(greeting))
+    print(f"${value(greeting)}")
 
 
 def value(msg):
@@ -11,13 +11,13 @@ def value(msg):
     msg = msg.lower()
 
     if msg.startswith("hello"):
-        return "$0"
+        return 0
 
     elif msg.startswith("h"):
-        return "$20"
+        return 20
 
     else:
-        return "$100"
+        return 100
 
 if __name__ == "__main__":
     main()
