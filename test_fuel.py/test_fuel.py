@@ -12,4 +12,9 @@ def test_full():
 
 def test_raises():
     with pytest.raises(ValueError):
+        convert("1/0")
+
+def test_raises2():
+    with pytest.raises(ZeroDivisionError):
         
+
