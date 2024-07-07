@@ -32,4 +32,5 @@ def convert(prompt):
     return round(percentage)
 
 
-main()
+if __name__ == "__main__":
+    main()
