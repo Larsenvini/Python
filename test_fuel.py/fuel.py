@@ -2,7 +2,7 @@ def main():
     while True:
         fraction = input("Fraction: ")
         try:
-            percentage = convert_to_percentage(fraction)
+            percentage = convert(fraction)
             if percentage <= 1:
                 print("E")
             elif percentage >= 99:
@@ -14,7 +14,7 @@ def main():
             continue
 
 
-def convert_to_percentage(prompt):
+def convert(prompt):
     x, y = prompt.split("/")
 
     x = int(x)
