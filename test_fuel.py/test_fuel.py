@@ -17,5 +17,15 @@ def test_raises():
 def test_raises2():
     with pytest.raises(ZeroDivisionError):
         convert("5/4")
-def test_gauge():
-    assert gauge
+
+def test_gauge_empty():
+    assert gauge(1) == "E"
+
+def test_gauge_full():
+    assert gauge(99) == "F"
+
+def test_gauge_p():
+    assert gauge(75) == "75%"
+
+
+
