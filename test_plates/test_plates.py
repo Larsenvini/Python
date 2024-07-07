@@ -18,6 +18,4 @@ def test_edge_cases():
     assert is_valid("ABCDEFGH") == False  # Too long
     assert is_valid("CS50!") == False  # Special characters
 
-if __name__ == "__main__":
-    pytest.main()
 
