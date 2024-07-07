@@ -27,9 +27,13 @@ def convert(prompt):
     if y == 0:
         raise ValueError
 
+    return x, y
+
+def gauge(percentage):
     percentage = (x / y) * 100
 
     return round(percentage)
+
 
 
 if __name__ == "__main__":
