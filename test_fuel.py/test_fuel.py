@@ -16,5 +16,6 @@ def test_raises():
 
 def test_raises2():
     with pytest.raises(ZeroDivisionError):
-        
-
+        convert("5/4")
+def test_gauge():
+    assert gauge
