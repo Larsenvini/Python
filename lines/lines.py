@@ -7,3 +7,9 @@ def main():
 
 
     filename = sys.argv[1]
+
+    if not filename.endwith(".py"):
+        sys.exit("File must end with .py")
+
+    if not os.path.isfile(filename):
+        sys.exit("File does not exist")
