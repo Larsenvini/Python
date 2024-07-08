@@ -25,12 +25,16 @@ def main():
 
     print(table)
 
-def convert_data(file):
+def convert_data(filename):
     try:
-        with open ("filename")
-        csv.reader(file.csv, dialect='excel', **fmtparams)
-            table = tabulate(filename, headers="firstrow", tablefmt="grid")
+        with open(filename, "r") as file:
+            reader = csv.reader(file)
+            data = [row for row in reader]
+            table = tabulate(data, headers="firstrow", tablefmt="grid")
+
         return table
+    except Exception as e:
+        raise e
 
 if __name__ == "__main__":
     main()
