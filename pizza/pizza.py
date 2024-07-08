@@ -1,6 +1,7 @@
 from tabulate import tabulate
 import sys
 import os
+import csv
 
 def main():
     if len(sys.argv) != 2:
@@ -17,7 +18,7 @@ def main():
 
     try:
         with open(filename, "r") as file:
-            table = tabulate(filename, headers="firstrow", tablefmt="grid"))
+            table = tabulate(filename, headers="firstrow", tablefmt="grid")
 
     except Exception as e:
         sys.exit(f"Error:{e}")
