@@ -27,7 +27,7 @@ def main():
 
 def convert_data(file):
     try:
-        csv.writer(file.csv, dialect='excel', **fmtparams)
+        csv.reader(file.csv, dialect='excel', **fmtparams)
             table = tabulate(filename, headers="firstrow", tablefmt="grid")
         return table
 
