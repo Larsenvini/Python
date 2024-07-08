@@ -13,3 +13,10 @@ def main():
 
     if not os.path.isfile(filename):
         sys.exit("File does not exist")
+
+    try:
+        with open(filename, "r") as file:
+            lines = file.readlines(filename)
+    except:
+        raise()
+
