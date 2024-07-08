@@ -17,7 +17,10 @@ def main():
 
     try:
         with open(filename, "r") as file:
-            table = file.tabulate()
+            table = tabulate(filename, headers="firstrow", tablefmt="grid"))
+
     except Exception as e:
         sys.exit(f"Error:{e}")
+
+    print(table)
 
