@@ -18,7 +18,7 @@ def main():
         with open(filename, "r") as file:
             lines = file.readlines()
     except Exception as e:
-        sys.exit("Error:{e}")
+        sys.exit(f"Error:{e}")
 
     code_lines = count_code_lines(lines)
     print(code_lines)
