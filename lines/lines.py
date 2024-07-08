@@ -27,4 +27,6 @@ def count_code_lines(lines):
     for line in lines:
         empty_line = line.strip()
         if empty_line and not empty_line.startswith("#"):
-            
+            code_lines += 1
+
+            return code_lines
