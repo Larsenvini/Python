@@ -17,11 +17,20 @@ def main():
         sys.exit("File does not exist")
 
     try:
-        csv.reader(regular.csv, dialect='excel', **fmtparams)
-            table = tabulate(filename, headers="firstrow", tablefmt="grid")
+        table = convert_data(filename)
+
 
     except Exception as e:
         sys.exit(f"Error:{e}")
 
     print(table)
+
+def convert_data(file):
+    try:
+        csv.writer(file.csv, dialect='excel', **fmtparams)
+            table = tabulate(filename, headers="firstrow", tablefmt="grid")
+        return table
+
+if __name__ == "__main__":
+    main()
 
