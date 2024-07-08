@@ -1,1 +1,1 @@
-import tabulate
+from tabulate import tabulate
