@@ -17,6 +17,14 @@ def main():
     try:
         with open(filename, "r") as file:
             lines = file.readlines(filename)
-    except:
-        raise()
+    except Exception as e:
+        sys.exit("Error:{e}")
 
+    code_lines = count_code_lines(lines)
+    print(code_lines)
+
+def count_code_lines(lines):
+    for line in lines:
+        empty_line = line.strip()
+        if empty_line and not empty_line.startswith("#"):
+            
