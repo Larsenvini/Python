@@ -8,7 +8,7 @@ def main():
 
     filename = sys.argv[1]
 
-    if not filename.endwith(".py"):
+    if not filename.endswith(".py"):
         sys.exit("Not a python file")
 
     if not os.path.isfile(filename):
