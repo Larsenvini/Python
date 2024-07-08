@@ -17,7 +17,7 @@ def main():
         sys.exit("File does not exist")
 
     try:
-        with open(filename, "r") as file:
+        csv.reader(regular.csv, dialect='excel', **fmtparams)
             table = tabulate(filename, headers="firstrow", tablefmt="grid")
 
     except Exception as e:
