@@ -31,3 +31,6 @@ def count_code_lines(lines):
             code_lines += 1
 
     return code_lines
+
+if __name__ == "__main__":
+    main()
