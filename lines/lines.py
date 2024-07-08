@@ -16,7 +16,7 @@ def main():
 
     try:
         with open(filename, "r") as file:
-            lines = file.readlines(filename)
+            lines = file.readlines()
     except Exception as e:
         sys.exit("Error:{e}")
 
