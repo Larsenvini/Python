@@ -6,4 +6,4 @@ def main():
         sys.exit("Usage: python lines.py <filename.py>")
 
     else:
-        file.read
+        file.read()
