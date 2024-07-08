@@ -16,5 +16,5 @@ def main():
         sys.exit("File does not exist")
 
     try:
-        for 
+        
         grid(filename)
