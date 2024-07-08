@@ -16,5 +16,8 @@ def main():
         sys.exit("File does not exist")
 
     try:
-        
-        grid(filename)
+        with open(filename, "r") as file:
+            table = file.tabulate()
+    except Exception as e:
+        sys.exit(f"Error:{e}")
+
