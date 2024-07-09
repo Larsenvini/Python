@@ -32,13 +32,24 @@ def same_extension(file1,file2):
     return os.path.splitext(file1)[1].lower() == os.path.splitext(file2)[1].lower()
 
 def process_image(input_path, output_path):
-    shirt = Image.open("shirt.png")
-    size = shirt.size
+    try:
+        shirt = Image.open("shirt.png")
+        size = shirt.size
+        print(f"Shirt size: {size}")
 
-    with Image.open(input_path) as im:
-        im = ImageOps.fit(im, size, method=Image.LANCZOS, bleed=0.0, centering=(0.5,0.5))
-        im.paste(shirt, (0,0), shirt)
-        im.save(output_path)
+        with Image.open(input_path) as im:
+            im = ImageOps.fit(im, size, method=Image.LANCZOS, bleed=0.0, centering=(0.5, 0.5))
+            print(f"Resized image size: {im.size}")
+
+            im.paste(shirt, (0, 0), shirt)
+            im.save(output_path)
+            print(f"Image saved as {output_path}")
+
+    except FileNotFoundError as fnf_error:
+        sys.exit(f"Error: {fnf_error}")
+    except Exception as e:
+        sys.exit(f"Error processing image: {e}")
+
 
 if __name__ == "__main__":
     main()
