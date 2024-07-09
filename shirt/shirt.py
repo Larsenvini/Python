@@ -37,8 +37,8 @@ def process_image(input_path, output_path):
 
     with Image.open(input_path) as im:
         im = ImageOps.fit(im, size, method=Image.LANCZOS, bleed=0.0, centering=(0.5,0.5))
-        im.paste(shirt, (0,0), shirt)
-        im.save(output_path)
+        Image.paste(shirt, (0,0), shirt)
+        Image.save(output_path)
 
 if __name__ == "__main__":
     main()
