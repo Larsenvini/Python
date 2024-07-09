@@ -38,7 +38,7 @@ def process_image(input_path, output_path):
         print(f"Shirt size: {size}")
 
         with Image.open(input_path) as im:
-            im = ImageOps.fit(im, size, method=Image.LANCZOS, bleed=0.0, centering=(0.5, 0.5))
+            im = ImageOps.fit(im, size, bleed=0.0, centering=(0.5, 0.5))
             print(f"Resized image size: {im.size}")
 
             im.paste(shirt, (0, 0), shirt)
