@@ -13,9 +13,9 @@ def validate(ip):
     pattern = (fr'^(?:{ns}\.{ns}\.{ns}\.{ns})$')
 
     if re.search(pattern, ip):
-        return "Valid"
+        return True
     else:
-        return "Invalid"
+        return False
 
 if __name__ == '__main__':
     main()
