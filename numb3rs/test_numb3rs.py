@@ -10,3 +10,4 @@ def test_false():
     assert validate("cat") == False
     assert validate("512.512.512.512") == False
     assert validate("o123.0.0.1") == False
+    assert validate("127.0.0.1 opaa arroba") == False
