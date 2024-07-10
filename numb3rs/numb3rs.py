@@ -2,7 +2,8 @@ import re
 import sys
 
 def main():
-    print(validate(input("IPv4 Address: ")))
+    ipv4 = sys.argv[1]
+    print(validate(ipv4))
 
 
 def validate(ip):
