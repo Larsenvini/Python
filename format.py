@@ -2,4 +2,4 @@ import re
 
 name = input("What's your name? ").strip()
 
-re.search(r"ˆ.+, ?.+$", name)  
+matches = re.search(r"ˆ.+, ?.+$", name)
