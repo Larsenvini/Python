@@ -7,4 +7,4 @@ def main():
 
 
 def validate(ip):
-    if re.search(r'^()$')
+    if re.search(r'^(?:[0-9].#.#.#)$')
