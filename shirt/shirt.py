@@ -13,7 +13,7 @@ def main():
         sys.exit("Input and output must be .jpg, .jpeg or .png")
 
     if not same_extension(input_path, output_path):
-        sys.exit("Input and output must have the same extension")
+        sys.exit("Input and output must have the same extension")numb
 
     if not os.path.isfile(input_path):
         sys.exit(f"Input file does not exist: {input_path}")
