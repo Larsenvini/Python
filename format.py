@@ -1,6 +1,5 @@
-name = input("What's your name? ").strip()
-if "," in name:
-    last, first = name.split(", ")
-    name = f"{first} {last}" 
+import re
 
-print(f"Hello, {name}")
+name = input("What's your name? ").strip()
+
+re.search(r"ˆ.+, ?.+$", name)
