@@ -8,6 +8,7 @@ def test_true():
 
 def test_false():
     assert validate("1.2.3.1000") == False
+    assert validate("45.137.315.27") == False
     assert validate("cat") == False
     assert validate("512.512.512.512") == False
     assert validate("o123.0.0.1") == False
