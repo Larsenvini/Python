@@ -15,5 +15,5 @@ def test_false():
 
 def check_first():
     with pytest.raises(ValueError):
-        ("127.0.1")
+        validate("127.0.1")
 
