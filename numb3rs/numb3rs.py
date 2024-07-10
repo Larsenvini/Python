@@ -3,7 +3,7 @@ import sys
 
 def main():
     if len(sys.argv) != 2:
-        sys.exit
+        sys.exit("Usage: python numb3rs.py <ipv4.address>")
     ipv4 = sys.argv[1]
     print(validate(ipv4))
 
