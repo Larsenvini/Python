@@ -1,3 +1,4 @@
+import pytest
 from numb3rs import validate
 
 def test_true():
@@ -11,3 +12,7 @@ def test_false():
     assert validate("512.512.512.512") == False
     assert validate("o123.0.0.1") == False
     assert validate("127.0.0.1 opaa arroba") == False
+
+def check_first():
+    with pytest.raises():
+        
