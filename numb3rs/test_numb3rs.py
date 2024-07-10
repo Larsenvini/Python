@@ -14,5 +14,6 @@ def test_false():
     assert validate("127.0.0.1 opaa arroba") == False
 
 def check_first():
-    with pytest.raises():
-        
+    with pytest.raises(ValueError):
+        ("127.0.1")
+
