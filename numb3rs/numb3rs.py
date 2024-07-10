@@ -10,9 +10,9 @@ def main():
 
 def validate(ip):
 
-    ns = r'([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-1][0-9]|22[0-5])'
+    ns = r'(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])'
 
-    pattern = (fr'^(?:{ns}\.{ns}\.{ns}\.{ns})$')
+    pattern = fr'^{ns}\.{ns}\.{ns}\.{ns}$'
 
     if re.search(pattern, ip):
         return True
