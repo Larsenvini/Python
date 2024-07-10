@@ -6,4 +6,4 @@ def main():
 
 
 def validate(ip):
-    
+    if re.search()
