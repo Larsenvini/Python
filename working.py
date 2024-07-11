@@ -23,4 +23,11 @@ def convert(hours):
 
     return f"{start_time_24} to {end_time_24}"
 
-def convert_to_24
+def convert_to_24(hour, minute, period):
+    hour = int(hour)
+    minute = int(minute)
+
+    if period == "AM":
+        
+
+
