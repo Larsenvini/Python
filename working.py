@@ -4,4 +4,5 @@ def main():
     print(convert(input("Hours: ")))
 
 def convert(hours):
-    
+
+    pattern = 
