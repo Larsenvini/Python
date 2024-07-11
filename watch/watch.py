@@ -10,9 +10,11 @@ def main():
 
 def parse(s):
 
-    match = r^("[http](s)?://(www.)?youtube.com/embed/\w"$)
+    match = re.search(r'src="(https?://(?:www\.)?youtube\.com/embed/[\w-]+)"', s)
 
-    if re.search(html, s):
+    if match:
+        embed.url = match.group(1)
+        video
 
 
 
