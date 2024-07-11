@@ -7,10 +7,11 @@ def convert(hours):
 
     pattern = r'(\d{1,2}):?(\d{2})? (AM|PM) to (\d{1,2}):?(\d{2})? (AM|PM)'
 
-    match = re.fullmatch(pattern, hours)
+    if not match := re.fullmatch(pattern, hours):
+         raise ValueError("Invalid Format")
 
-    if not match:
-        raise ValueError("Invalid Format")
+
+
 
     start_hour, start_minute, start_period, end_hour, end_minute, end_period = match.groups()
 
@@ -35,6 +36,6 @@ def convert_to_24(hour, minute, period):
         if hour != 12:
             hour += 12
 
-    if not 
+    if not
 
 
