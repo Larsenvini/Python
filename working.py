@@ -15,3 +15,5 @@ def convert(hours):
     start_hour, start_minute, start_period, end_hour, end_minute, end_period = match.groups()
 
     start_minute = start_minute if start_minute else '00'
+
+    end_minute = end_minute if end_minute else '00'
