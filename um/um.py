@@ -16,4 +16,4 @@ def count(sentence):
 
     return um_count
 
-
+main()
