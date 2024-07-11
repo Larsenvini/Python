@@ -10,6 +10,9 @@ def test_convert():
 def test_excep():
     with pytest.raises(ValueError):
         convert("8 AM TO 5 PM") == "09:00 to 17:00"
+    with pytest.raises(ValueError):
         convert("8:30 AM TO 5:30 PM") == "08:31 to 17:30"
+    with pytest.raises(ValueError):
         convert("6 AM 8 AM")
+    with pytest.raises(ValueError):
         convert("15 AM TO 26 PM")
