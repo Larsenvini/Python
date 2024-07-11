@@ -17,3 +17,10 @@ def convert(hours):
     start_minute = start_minute if start_minute else '00'
 
     end_minute = end_minute if end_minute else '00'
+
+    start_time_24 = convert_to_24(start_hour, start_minute, start_period)
+    end_time_24 = convert_to_24(end_hour, end_minute, end_period)
+
+    return f"{start_time_24} to {end_time_24}"
+
+def convert_to_24
