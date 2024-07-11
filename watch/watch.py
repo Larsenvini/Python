@@ -9,7 +9,11 @@ def main():
     print(parse(html))
 
 def parse(s):
-    s = r^("[http](s)?://(www.)?youtube.com/embed/xvFZjo5PgG)
+
+    html = r^("[http](s)?://(www.)?youtube.com/embed/\w"$)
+
+    if re.search(html, s):
+
 
 
 
