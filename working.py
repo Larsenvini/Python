@@ -28,6 +28,10 @@ def convert_to_24(hour, minute, period):
     minute = int(minute)
 
     if period == "AM":
-        
+        if hour == 12:
+            hour = 0
+
+    elif period == "PM":
+        if hour
 
 
