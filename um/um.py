@@ -8,7 +8,7 @@ def count(sentence):
 
     um_count = 0
 
-    pattern = re.search(r'[ um ]', sentence, re.IGNORECASE)
+    pattern = re.compile(r'\bum\b', sentence, re.IGNORECASE)
 
     if pattern in sentence:
         for pattern in sentence:
