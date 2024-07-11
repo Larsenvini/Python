@@ -5,5 +5,5 @@ def main():
     print(count(input("Text: ")))
 
 def count(sentence):
-    pattern = re.search(r')
+    pattern = re.search(r'[ um ]')
 
