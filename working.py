@@ -5,4 +5,4 @@ def main():
 
 def convert(hours):
 
-    pattern = 
+    pattern = r'(\d{1,2}):?(\d{2})? (AM|PM) to (\d{1,2}):?(\d{2})? (AM|PM)'
