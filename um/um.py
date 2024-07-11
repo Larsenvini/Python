@@ -2,4 +2,8 @@ import re
 import sys
 
 def main():
-    print(count(input(")))
+    print(count(input("Text: ")))
+
+def count(sentence):
+    
+
