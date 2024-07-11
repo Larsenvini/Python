@@ -9,7 +9,8 @@ def main():
     print(parse(html))
 
 def parse(s):
-    s = (r"^[http][s]?(\w+\.)?\w+\.edu$"
+    
+
 
 
 ...
