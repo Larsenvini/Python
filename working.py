@@ -32,6 +32,7 @@ def convert_to_24(hour, minute, period):
             hour = 0
 
     elif period == "PM":
-        if hour
+        if hour != 12:
+            hour 
 
 
