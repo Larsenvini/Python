@@ -7,7 +7,7 @@ def test_convert():
     assert convert("10 AM TO 5 PM") == "10:00 to 17:00"
     assert convert("5 AM TO 10 PM") == "05:00 to 10:00"
 
-def test_excep():
+def test_invalid_format():
     with pytest.raises(ValueError):
         convert("8 AM TO 5 PM") == "09:00 to 17:00"
     with pytest.raises(ValueError):
