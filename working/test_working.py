@@ -9,10 +9,21 @@ def test_convert():
 
 def test_invalid_format():
     with pytest.raises(ValueError):
-        convert("8 AM TO 5 PM") == "09:00 to 17:00"
+        convert("8 AM - 5 PM")
     with pytest.raises(ValueError):
-        convert("8:30 AM TO 5:30 PM") == "08:31 to 17:30"
+        convert("08:30 TO 17:30")
     with pytest.raises(ValueError):
         convert("6 AM 8 AM")
     with pytest.raises(ValueError):
-        convert("15 AM TO 26 PM")
+        convert("8 AM until 22 PM")
+
+def test_invalid_time():
+    with pytest.raises(ValueError):
+        convert("12:60 AM - 5: PM")
+    with pytest.raises(ValueError):
+        convert("08:30 TO 17:30")
+    with pytest.raises(ValueError):
+        convert("6 AM 8 AM")
+    with pytest.raises(ValueError):
+        convert("8 AM until 22 PM")
+
