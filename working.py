@@ -11,3 +11,5 @@ def convert(hours):
 
     if not match:
         raise ValueError("Invalid Format")
+
+    start_hour, start_minute, start_period, end_hour
