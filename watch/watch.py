@@ -15,7 +15,8 @@ def parse(s):
     if match:
         embed_url = match.group(1)
         video_id = embed_url.split('/'[-1])
-        return f"
+        return f"https://youtu.be/{video_id}"
+    return None
 
 
 
