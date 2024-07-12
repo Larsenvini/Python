@@ -17,4 +17,4 @@ def get_student():
     student["name"] = input("Name: ")
     student["house"] = input("House: ")
     return student
-
+'''
