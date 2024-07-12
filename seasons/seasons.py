@@ -9,11 +9,13 @@ def main():
 
 def birthdate():
 
-    date_birthday = (input("What's your birthday? Use YYYY-MM-DD ").strip("-"))
+    date_birthday = (input("What's your birthday? Use YYYY-MM-DD "))
 
-    time_of_birth = date(date_birthday)
+    year, month, day = date_birthday.split("-")
 
-    minutes = time_of_birth.minutes
+    d = date(year, month, day)
+
+    minutes = d.minutes
 
     return minutes
 
