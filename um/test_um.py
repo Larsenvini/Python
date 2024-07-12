@@ -1,4 +1,3 @@
-import pytest
 from um import count
 
 def main():
@@ -10,11 +9,10 @@ def main():
 def test_okstr():
     assert count("um opa um") == 2
     assert count(" so i was thinking um umm maybe um we could um go out") == 3
+    assert count("umopaum i like cs50 a lot") == 0
+    assert count("umumumumumumumumumuummmummmummumumumumum") == 0
+    assert count("umumumumumumumumumuummmummmummumumumumum um") == 1
 
-def test_notokstr():
-    with pytest.raises(ValueError):
-        count("22123")
 
-    
 
 
