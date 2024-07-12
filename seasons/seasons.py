@@ -15,16 +15,19 @@ def birthdate():
 
     d = date(year, month, day)
 
-    minutes = year_to_minutes(d)
+    diff_minutes = year_to_minutes(d)
 
-    return
+    return diff_minutes
 
 def year_to_minutes(years):
-    start_date = date(years)
+    today = date.today()
 
-    end_date = date(start_date.year + years, start_date.month, start_date.day)
 
-    difference_in_days
+    difference_in_days = (today - years).days
+
+    minutes = difference_in_days * 24 * 60
+
+    return minutes
 
 if __name__ == "__main__":
     main()
