@@ -1,3 +1,6 @@
 import validators
 
-validators.validate.email()
+def main():
+    print(validators.email(input("What's your email address? ")))
+
+main()
