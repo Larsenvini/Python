@@ -16,3 +16,5 @@ def birthdate(birthday):
 
     time_of_birth = date(date_birthday)
 
+if __name__ == "__main__":
+    main()
