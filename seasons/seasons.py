@@ -20,7 +20,9 @@ def birthdate():
     return
 
 def year_to_minutes(years):
-    start_year = 
+    start_date = date(years)
+
+    end_date = start_date
 
 if __name__ == "__main__":
     main()
