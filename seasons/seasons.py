@@ -1,9 +1,9 @@
-import datetime
+from datetime import date
 
 def main():
     birthday = birthdate()
 
-def birthdate(date):
+def birthdate(birthday):
 
     date_birthday = (input("What's your birthday? Use YYYY-MM-DD "))
 
