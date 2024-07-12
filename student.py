@@ -1,5 +1,6 @@
-name = input("Name: ")
+def main():
+    name = get_name()
 
-house = input("House: ")
+    house = get_house()
 
-print(f"{name} from {house}")
+    print(f"{name} from {house}")
