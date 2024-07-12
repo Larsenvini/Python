@@ -1,7 +1,7 @@
 def main():
-    name, house= get_student()
+    student = get_student()
 
-    print(f"{name} from {house}")
+    print(f"{student[1]} from {student[1]}")
 
 def get_student():
     name = input("Name: ")
