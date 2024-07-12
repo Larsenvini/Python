@@ -19,6 +19,8 @@ def birthdate():
 
     return minutes
 
-def
+def year_to_minutes(years):
+    
+
 if __name__ == "__main__":
     main()
