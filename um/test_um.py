@@ -12,7 +12,7 @@ def test_okstr():
     assert count("umopaum i like cs50 a lot") == 0
     assert count("umumumumumumumumumuummmummmummumumumumum") == 0
     assert count("umumumumumumumumumuummmummmummumumumumum um") == 1
-    assert count("i am from brazil, we have um um UM ehh, amazing people and beautiful places!!!") == 0
+    assert count("i am from brazil, we have um um UM ehh, amazing people and beautiful places!!!") == 3
 
 
 
