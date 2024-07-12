@@ -15,9 +15,10 @@ def birthdate():
 
     d = date(year, month, day)
 
-    minutes = d.minutes
+    minutes = year_to_minutes(d)
 
     return minutes
 
+def
 if __name__ == "__main__":
     main()
