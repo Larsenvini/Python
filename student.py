@@ -7,6 +7,8 @@ def get_student():
     name = input("Name: ")
     house = input("House: ")
 
+    return name,house
+
     return f"
 if __name__ == "__main__":
     main()
