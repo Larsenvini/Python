@@ -6,14 +6,10 @@ def main():
 
 def count(sentence):
 
-    um_count = 0
+    pattern = re.compile(r'\bum\b', re.IGNORECASE)
 
-    pattern = re.compile(r'\bum\b', sentence, re.IGNORECASE)
+    matches = re.findall(pattern, sentence)
 
-    if pattern in sentence:
-        for pattern in sentence:
-            um_count += 1
-
-    return um_count
+    return len(matches)
 
 main()
