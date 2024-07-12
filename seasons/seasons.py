@@ -3,7 +3,7 @@ from datetime import date, datetime
 
 def main():
     birthdate = get_birthdate()
-    birthday1, birthday2
+    birthday1, birthday2 = birthdate.split()
 
     print(f"{minutes})
 
