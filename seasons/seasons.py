@@ -1,9 +1,11 @@
 import datetime
 
 def main():
-    print(birthdate(input("What's your birthday? Use YYYY-MM-DD ")))
+    birthday = birthdate()
 
 def birthdate(date):
 
-    time_of_birth = date.date
+    date_birthday = (input("What's your birthday? Use YYYY-MM-DD "))
+
+    time_of_birth = datetime.year(date_birthday)
 
