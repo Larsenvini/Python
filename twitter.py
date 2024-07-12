@@ -1,3 +1,7 @@
 url = input("Whats your twitter username? ").strip()
 
-print(url)
+username = url.replace("https://twitter.com/", "")
+
+print(username)
+
+
