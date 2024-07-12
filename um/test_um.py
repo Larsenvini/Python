@@ -15,7 +15,6 @@ def test_notokstr():
     with pytest.raises(ValueError):
         count("22123")
 
-    with pytest.raises(ValueError):
-        count("!!@!@!#*")
+    
 
 

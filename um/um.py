@@ -3,7 +3,12 @@ import re
 def main():
     print(count(input("Text: ")))
 
+
+
 def count(sentence):
+
+    if sentence != str:
+        raise ValueError("Invalid format")
 
     pattern = re.compile(r'\bum\b', re.IGNORECASE)
 
