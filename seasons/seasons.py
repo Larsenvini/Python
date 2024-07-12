@@ -9,9 +9,9 @@ def main():
 
 def birthdate():
 
-    date_birthday = (input("What's your birthday? Use YYYY-MM-DD "))# getting the birthday
+    date_birth = (input("What's your date of birth? Use YYYY-MM-DD "))# getting the birth date
 
-    year, month, day = date_birthday.split("-")
+    year, month, day = date_birth.split("-")
 
     d = date(year, month, day)
 
@@ -20,7 +20,7 @@ def birthdate():
     return
 
 def year_to_minutes(years):
-
+    start_year = 
 
 if __name__ == "__main__":
     main()
