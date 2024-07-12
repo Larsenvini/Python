@@ -9,7 +9,7 @@ def main():
 
 def birthdate():
 
-    date_birthday = (input("What's your birthday? Use YYYY-MM-DD "))
+    date_birthday = (input("What's your birthday? Use YYYY-MM-DD "))# getting the birthday
 
     year, month, day = date_birthday.split("-")
 
@@ -17,10 +17,10 @@ def birthdate():
 
     minutes = year_to_minutes(d)
 
-    return minutes
+    return
 
 def year_to_minutes(years):
-    
+
 
 if __name__ == "__main__":
     main()
