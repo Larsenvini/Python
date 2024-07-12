@@ -9,7 +9,7 @@ def main():
 
 def birthdate():
 
-    date_birthday = (input("What's your birthday? Use YYYY-MM-DD "))
+    date_birthday = (input("What's your birthday? Use YYYY-MM-DD ").strip("-"))
 
     time_of_birth = date(date_birthday)
 
