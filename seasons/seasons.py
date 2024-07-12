@@ -5,3 +5,5 @@ def main():
 
 def birthdate(date):
 
+    time_of_birth = date.date
+
