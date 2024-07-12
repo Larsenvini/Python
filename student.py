@@ -6,10 +6,7 @@ def main():
     print(f"{student[1]} from {student[1]}")
 
 def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-
-    return [name,house] 
+    
 
 
 if __name__ == "__main__":
