@@ -1,6 +1,13 @@
 import validators
 
 def main():
-    print(validators.email(input("What's your email address? ")))
+    email = validators.email(input("What's your email address? "))
 
-main()
+    if email == True:
+        print("Valid")
+
+    else:
+        print("Unvalid")
+
+if __name__ == '__main__':
+    main()
