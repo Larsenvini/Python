@@ -7,7 +7,7 @@ def main():
 
 def count(sentence):
 
-    if sentence != str:
+    if sentence == int:
         raise ValueError("Invalid format")
 
     pattern = re.compile(r'\bum\b', re.IGNORECASE)
