@@ -1,8 +1,9 @@
+import inflect
 from datetime import date, datetime
 
 def main():
     birthdate = get_birthdate()
-    minutes = calculate_age_in_minutes(birthdate)
+    birthday1, birthday2
 
     print(f"{minutes})
 
