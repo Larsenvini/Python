@@ -9,8 +9,7 @@ def main():
 
 def get_birthdate(date_birth=None):
           if not date_birth:
-                date_birth = input()
-          date_birth = input("What's your date of birth? Use YYYY-MM-DD ")
+                date_birth = input("What's your date of birth? Use YYYY-MM-DD ")
           birth_date = datetime.strptime(date_birth, "%Y-%m-%d").date()
 
           today = date.today()
