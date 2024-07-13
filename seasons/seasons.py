@@ -19,15 +19,11 @@ def get_birthdate(date_birth=None):
 
 
           minutes_in_words = number_to_words(minutes)
-
-
-
-
           return minutes_in_words
 
 def number_to_words(number):
     p = inflect.engine()
-    words = p.number_to_words(number, andword="")
+    words = p.number_to_words(number, andword="").replace("-", " ")
 
     words = words.replace("-", " ")
     words = words.capitalize()
