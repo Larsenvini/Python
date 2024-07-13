@@ -16,8 +16,12 @@ def get_birthdate(date_birth=None):
           delta = today - birth_date
 
           minutes = delta.days * 24 * 60
+          print(f"DEBUG: Birthdate: {birth_date}, Today: {today}, Days difference: {delta.days}, Minutes: {minutes}")
 
           minutes_in_words = number_to_words(minutes)
+          print(f"DEBUG: Minutes in words: {minutes_in_words}")
+
+
 
           return minutes_in_words
 
