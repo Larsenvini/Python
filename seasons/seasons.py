@@ -12,6 +12,8 @@ def get_birthdate(date_birth=None):
                 date_birth = input("What's your date of birth? Use YYYY-MM-DD ")
           birth_date = datetime.strptime(date_birth, "%Y-%m-%d").date()
 
+          if birth_date != 
+
           today = date.today()
           delta = today - birth_date
 
