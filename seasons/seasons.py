@@ -4,7 +4,7 @@ from datetime import date, datetime
 def main():
     birthdate = get_birthdate()
 
-    print(f"{birthdate}\n moments so dear\n{birthdate} minutes\nHow do you measure, measure a year?")
+    print(birthdate)
 
 def get_birthdate(date_birth=None):
           if not date_birth:
