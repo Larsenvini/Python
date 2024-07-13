@@ -22,7 +22,7 @@ def get_birthdate(date_birth=None):
 
 def number_to_words(number):
     p = inflect.engine()
-    words = p.number_to_words(number, andword="")
+    words = p.number_to_words(number, andword="", wantlist=False)
 
     return words.capitalize()
 
