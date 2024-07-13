@@ -1,5 +1,6 @@
 import inflect
 from datetime import date, datetime
+import sys
 
 def main():
     birthdate = get_birthdate()
