@@ -10,9 +10,12 @@ def main():
 def get_birthdate(date_birth=None):
           if not date_birth:
                 date_birth = input("What's your date of birth? Use YYYY-MM-DD ")
-          birth_date = datetime.strptime(date_birth, "%Y-%m-%d").date()
+          try:
+            birth_date = datetime.strptime(date_birth, "%Y-%m-%d").date()
 
-          if birth_date != 
+          except ValueError:
+               sys.exit(1)
+
 
           today = date.today()
           delta = today - birth_date
