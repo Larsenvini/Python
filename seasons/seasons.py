@@ -7,7 +7,9 @@ def main():
 
     print(f"{birthdate}\n{birthday1} moments so dear\n{birthdate} minutes\nHow do you measure, measure a year?")
 
-def get_birthdate():
+def get_birthdate(date_birth=None):
+          if not date_birth:
+                date_birth = input()
           date_birth = input("What's your date of birth? Use YYYY-MM-DD ")
           birth_date = datetime.strptime(date_birth, "%Y-%m-%d").date()
 
