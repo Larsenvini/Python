@@ -8,7 +8,7 @@ def test_number_to_words():
 
 @patch('builtins.input', return_value="2005-03-02")
 @patch('seasons.date')
-def test_get_birthdate(mock_date, mock_input):
+def test_get_birthdate(mock_date):
     mock_date.today.return_value = date(2024, 7, 11)
     mock_date.side_effect = lambda *args, **kw: date(*args, **kw)
 
