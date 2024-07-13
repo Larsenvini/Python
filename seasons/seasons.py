@@ -27,7 +27,6 @@ def number_to_words(number):
 
     words = words.replace("-", " ")
     words = words.capitalize()
-
     return words
 
 if __name__ == "__main__":
