@@ -1,4 +1,6 @@
 import pytest
+from unittest.mock import patch
+from datetime import date
 from seasons import number_to_words, get_birthdate
 
 def test_number_to_words():
