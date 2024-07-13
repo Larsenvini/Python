@@ -24,9 +24,7 @@ def number_to_words(number):
     p = inflect.engine()
     words = p.number_to_words(number, andword="")
 
-    words = words.replace("-", " ")
-    words = words.capitalize()
-    return words
+    return words.capitalize()
 
 if __name__ == "__main__":
     main()
