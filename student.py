@@ -1,5 +1,5 @@
 class Student():
-    def __init__(self, name, house):
+    def __init__(self, name, house): #self gets the just created object (Student())
        self.name = name
        self.house = house
     ...
