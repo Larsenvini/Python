@@ -20,8 +20,9 @@ def get_student():
 
     name = input("Name: ")
     house = input("House: ")
+    patronus = input("Patronus: ")
 
-    return Student(name, house)
+    return Student(name, house, patronus)
 
 
 
