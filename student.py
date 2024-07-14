@@ -11,21 +11,21 @@ class Student():
     def __str__(self):
         return f"{self.name} from {self.house}"
 
-    def main():
-        student = get_student()
-        print(f"{student.name} from {student.house}")
+    def get_student():
 
-        def get_student():
+        name = input("Name: ")
+        house = input("House: ")
+        student = Student(name, house)
 
-            name = input("Name: ")
-            house = input("House: ")
-            student = Student(name, house)
+        return student
 
-            return student
+def main():
+    student = get_student()
+    print(student)
 
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
 
 '''
 before = better for longer code:
