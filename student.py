@@ -5,14 +5,14 @@ class Student():
         student = get_student()
         print(f"{student['name']} from {student['house']}")
 
-    def get_student():
-        student = Student()
-        student.name = input("Name: ")
-        student.house = input("House: ")
+        def get_student():
+            student = Student()
+            student.name = input("Name: ")
+            student.house = input("House: ")
 
-        return student
+            return student
     if __name__ == "__main__":
-    main()
+        main()
 
 '''
 before = better for longer code:
