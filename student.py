@@ -1,3 +1,6 @@
+class
+
+
 def main():
     student = get_student()
     print(f"{student['name']} from {student['house']}")
