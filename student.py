@@ -1,5 +1,5 @@
 class Student():
-    def __init__(self, name, house):
+    def __init__(self, name, house, patronus):
      #self gets the just created object (Student())
         if not name:
             raise ValueError("Missing name")
@@ -7,6 +7,7 @@ class Student():
             raise ValueError("Invalid house")
         self.name = name
         self.house = house
+        self.patronus = patronus
 
     def __str__(self):
         return f"{self.name} from {self.house}"
