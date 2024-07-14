@@ -16,8 +16,10 @@ class Student():
             name = input("Name: ")
             house = input("House: ")
             student = Student(name, house)
+            try:
+                return student
+            except ValueError:
 
-            return student
     if __name__ == "__main__":
         main()
 
