@@ -11,7 +11,7 @@ class Jar:
         return cookie_jar
 
     def __str__(self):
-        ...
+        __init__()
 
     def deposit(self, n):
         ...
@@ -25,4 +25,3 @@ class Jar:
 
     @property
     def size(self):
-
