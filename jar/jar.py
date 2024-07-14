@@ -11,7 +11,7 @@ class Jar:
         return cookie_jar
 
     def __str__(self):
-        from _
+        
 
     def deposit(self, n):
         ...
