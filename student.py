@@ -1,7 +1,10 @@
 class Student():
-    def __init__(self, name, house): #self gets the just created object (Student())
-       self.name = name
-       self.house = house
+    def __init__(self, name, house):
+     #self gets the just created object (Student())
+     if not name:
+        print("Missing name")
+        self.name = name
+        self.house = house
     ...
 
     def main():
