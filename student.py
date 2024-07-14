@@ -1,9 +1,9 @@
 class Student():
-
+    ...
 
     def main():
         student = get_student()
-        print(f"{student['name']} from {student['house']}")
+        print(f"{student.name} from {student.house}")
 
         def get_student():
             student = Student()
@@ -21,4 +21,7 @@ def get_student():
     student["name"] = input("Name: ")
     student["house"] = input("House: ")
     return student
+
+
+but now we know abt classes and objects
 '''
