@@ -1,4 +1,4 @@
-class
+class Student():
 
 
 def main():
@@ -6,8 +6,9 @@ def main():
     print(f"{student['name']} from {student['house']}")
 
 def get_student():
-    name = input("Name: ")
-    house = input("House: ")
+    student = Student()
+    student.name = input("Name: ")
+    student.house = input("House: ")
 
     return {"name": name, "house": house}
 if __name__ == "__main__":
