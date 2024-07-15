@@ -18,6 +18,8 @@ class Student():
                 return "Horse"
             case "Otter":
                 return "Otta"
+            case _:
+                return "Wand"
 
 def main():
     student = get_student()
