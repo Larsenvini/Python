@@ -13,15 +13,15 @@ class Student():
 
     @property
 #getter
-    def hou$e(self):
-        return self.house
+    def house(self):
+        return self._house
 
     @house.setter
 #setter
-    def hous$e(self,house):
+    def house(self,house):
         if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
             raise ValueError("Invalid house")
-        self.house = house
+        self._house = house
 
 def main():
     student = get_student()
