@@ -16,8 +16,8 @@ class Student():
         return self._name
     @name.setter
     def name(self,name):
-        if name not in ["]:
-            raise ValueError("Invalid name")
+        if not name:
+            raise ValueError("Missing name")
         self._name = name
 
     @property #getter
