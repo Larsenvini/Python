@@ -1,8 +1,6 @@
 class Student():
     def __init__(self, name, house):
-     #self gets the just created object (Student())
-        if not name:
-            raise ValueError("Missing name")
+     #self gets the just created object (Student()
 
         self.name = name
         self.house = house
