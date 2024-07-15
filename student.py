@@ -13,7 +13,11 @@ class Student():
         return f"{self.name} from {self.house}"
 
     def charm(self):
-        mat
+        match self.patronus:
+            case "Stag":
+                return "Horse"
+            case "Otter":
+                return "Otta"
 
 def main():
     student = get_student()
