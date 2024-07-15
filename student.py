@@ -1,5 +1,5 @@
 class Student():
-    def __init__(self, name, house, patronus):
+    def __init__(self, name, house):
      #self gets the just created object (Student())
         if not name:
             raise ValueError("Missing name")
@@ -7,32 +7,21 @@ class Student():
             raise ValueError("Invalid house")
         self.name = name
         self.house = house
-        self.patronus = patronus
+
 
     def __str__(self):
         return f"{self.name} from {self.house}"
 
-    def charm(self):
-        match self.patronus:
-            case "Stag":
-                return "Horse"
-            case "Otter":
-                return "Otta"
-            case _:
-                return "Wand"
-
 def main():
     student = get_student()
-    print("Expecto Patronum!")
-    print(student.charm())
+    print(student)
 
 def get_student():
 
     name = input("Name: ")
     house = input("House: ")
-    patronus = input("Patronus: ")
 
-    return Student(name, house, patronus)
+    return Student(name, house)
 
 
 
