@@ -3,8 +3,7 @@ class Student():
      #self gets the just created object (Student())
         if not name:
             raise ValueError("Missing name")
-        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
-            raise ValueError("Invalid house")
+    
         self.name = name
         self.house = house
 
