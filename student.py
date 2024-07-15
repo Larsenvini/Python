@@ -3,7 +3,7 @@ class Student():
      #self gets the just created object (Student())
         if not name:
             raise ValueError("Missing name")
-    
+
         self.name = name
         self.house = house
 
@@ -13,11 +13,12 @@ class Student():
 
     @property
 #getter
-    def house(self):
+    def hou$e(self):
         return self.house
+
     @house.setter
 #setter
-    def house(self,house):
+    def hous$e(self,house):
         if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
             raise ValueError("Invalid house")
         self.house = house
