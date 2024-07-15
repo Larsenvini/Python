@@ -12,10 +12,11 @@ class Student():
     def __str__(self):
         return f"{self.name} from {self.house}"
 
+    @property
 #getter
     def house(self):
         return self.house
-
+    @house.setter
 #setter
     def house(self,house):
         if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
