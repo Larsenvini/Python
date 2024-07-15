@@ -12,7 +12,15 @@ class Student():
         return f"{self.name} from {self.house}"
 
     @property
-#getter
+    def name(self):
+        return self._name
+    @name.setter
+    def name(self,name):
+        if name not in ["]:
+            raise ValueError("Invalid name")
+        self._name = name
+
+    @property #getter
     def house(self):
         return self._house
 
