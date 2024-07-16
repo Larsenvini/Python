@@ -8,17 +8,22 @@ class Jar:
         self._cookies = 0 #start at 0
 
     def __str__(self):
-
+        return "🍪" *self._cookies
 
     def deposit(self, n):
-        ...
+        if self._cookies + n > sel._capacity:
+            raise ValueError("Deposit value too large")
+        self._cookies += n
 
     def withdraw(self, n):
-        ...
+        if n > self._cookies + n > self._capacity:
+            raise ValueError("Withdraw value too large")
+        self._cookies -= n
 
     @property
     def capacity(self):
-        ...
+        return self._capacity
 
     @property
     def size(self):
+        return self._cookies
