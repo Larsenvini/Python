@@ -12,13 +12,14 @@ class Vault:
         sickles = self.sickles + other.sickles
         knuts = self.knuts + other.knuts
         return Vault(galleons, sickles, knuts)
-    
+
 
 def main():
     get_vault()
 
 def get_vault():
-    potter = Vault(input("What is your deposit? (Galleons, Sickles and knuts)"))
+    galleons_a, sickles_a, knuts_a = input("What is your deposit? (Galleons, Sickles and knuts").split(", ")
+    potter = Vault(galleons_a, sickles_a, knuts_a)
     print(f"Potter Family: {potter}")
 
     weasley = Vault(input("What is your deposit? (Galleons, Sickles and knuts)"))
