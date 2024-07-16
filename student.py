@@ -9,6 +9,11 @@ class Student():
     def __str__(self):
         return f"{self.name} from {self.house}"
 
+class Professor:
+    def __init__(self, name, subject):
+        if not name:
+            raise ValueError("Missing name")
+
     @property
     def name(self):
         return self._name
