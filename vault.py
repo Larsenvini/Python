@@ -12,16 +12,21 @@ class Vault:
         sickles = self.sickles + other.sickles
         knuts = self.knuts + other.knuts
         return Vault(galleons, sickles, knuts)
+    
 
+def main():
+    get_vault()
 
-potter = Vault(100, 50, 25)
-print(f"Potter Family: {potter}")
+def get_vault():
+    potter = Vault(input("What is your deposit? (Galleons, Sickles and knuts)"))
+    print(f"Potter Family: {potter}")
 
-weasley = Vault(25, 50, 100)
-print(f"Weasley Family: {weasley}")
+    weasley = Vault(input("What is your deposit? (Galleons, Sickles and knuts)"))
+    print(f"Weasley Family: {weasley}")
 
-total = potter + weasley
-print(f"Total: {total}")
+    total = potter + weasley
+    print(f"Total: {total}")
 
 if __name__ == "__main__":
     main()
+
