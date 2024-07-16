@@ -13,6 +13,10 @@ class Professor:
     def __init__(self, name, subject):
         if not name:
             raise ValueError("Missing name")
+        self.name = name
+        self.subject = subject
+
+        ...
 
     @property
     def name(self):
