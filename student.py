@@ -1,4 +1,7 @@
-class Student():
+class Wizard:
+    def __init__(self, name, house):
+        if n
+class Student:
     def __init__(self, name, house):
      #self gets the just created object (Student()
 
