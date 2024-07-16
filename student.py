@@ -4,20 +4,20 @@ class Wizard:
             raise ValueError("Missing name")
         self.name = name
 
-class Student:
+class Student(Wizard):
     def __init__(self, name, house):
      #self gets the just created object (Student()
-
-
+        super().__init__(name)
         self.house = house
 
 
     def __str__(self):
         return f"{self.name} from {self.house}"
 
-class Professor:
+class Professor(Wizard):
     def __init__(self, name, subject):
-       
+        
+        super().__init__(name)
         self.subject = subject
 
         ...
