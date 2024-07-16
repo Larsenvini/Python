@@ -50,7 +50,7 @@ def test_withdraw():
         jar.withdraw(-1)
 
 def test_capacity():
-    jar = Jar()
+    jar = Jar(5)
     assert jar.capacity == 5
 
 def test_size():
