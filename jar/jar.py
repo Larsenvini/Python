@@ -11,7 +11,7 @@ class Jar:
         return "🍪" *self._cookies
 
     def deposit(self, n):
-        if self._cookies + n > sel._capacity:
+        if self._cookies + n > self._capacity:
             raise ValueError("Deposit value too large")
         self._cookies += n
 
