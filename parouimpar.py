@@ -1,4 +1,7 @@
 def main():
     n = int(input("Digite um número: "))
 
-    n %2 == 0
+    two = int(2)
+
+    n % two == 0
+    print()
