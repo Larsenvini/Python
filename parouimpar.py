@@ -1,4 +1,2 @@
-def main():
-    n = int(input("Digite um número: "))
-
-    
+n = int(input("Digite um número: "))
+# mostrar se é par ou não
