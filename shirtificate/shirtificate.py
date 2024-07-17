@@ -19,7 +19,7 @@ class PDF(FPDF):
 
     def get_image_dimensions(self, image_path):
         from PIL import Image
-        image = Image.open(iamge_path)
+        image = Image.open(image_path)
         width, height = image.size
         aspect_ratio = height / width
         return 100, 100 * aspect_ratio
@@ -39,6 +39,6 @@ class PDF(FPDF):
 pdf = FPDF()
 pdf.add_page()
 pdf.set_font("helvetica", size=12) # add "B" or "I" before the size for bold/italic
-pdf.add_centered_image(https://cs50.harvard.edu/python/2022/psets/8/shirtificate/shirtificate.png)
+pdf.add_centered_image("https://cs50.harvard.edu/python/2022/psets/8/shirtificate/shirtificate.png")
 pdf.output("hello_world.pdf")
 pdf = FPDF(orientation="P", unit="mm", format="A4")
