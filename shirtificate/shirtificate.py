@@ -60,4 +60,4 @@ pdf.add_page()
 pdf.set_font("helvetica", size=12) # add "B" or "I" before the size for bold/italic
 pdf.add_centered_image(image_path)
 pdf.add_centered_text(final_text)
-pdf.output("shirtificated.pdf")
+pdf.output("shirtificate.pdf")
