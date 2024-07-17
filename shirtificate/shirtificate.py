@@ -37,7 +37,7 @@ class PDF(FPDF):
         page_height = self.h - 2 * self.t_margin
         y = page_height / 2 - 30
 
-        Vself.cell(80)
+        self.cell(80)
         self.set_xy(x,y)
         self.set_font("helvetica", "B", 24)
         self.set_text_color(255, 255, 255)
@@ -55,7 +55,7 @@ download_image(image_url, image_path)
 text = input("Name: ")
 final_text = (f"{text} took CS50")
 
-pdf = PDF()
+pdf = PDF(orientation="P", unit="mm", format="A4")
 pdf.add_page()
 pdf.set_font("helvetica", size=12) # add "B" or "I" before the size for bold/italic
 pdf.add_centered_image(image_path)
