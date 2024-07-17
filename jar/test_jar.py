@@ -18,7 +18,7 @@ def test_str():
     assert str(jar) == ""
 
     jar.deposit(3)
-    assert srt(jar) == "🍪🍪🍪"
+    assert str(jar) == "🍪🍪🍪"
 
 def test_deposit():
     jar = Jar(10)

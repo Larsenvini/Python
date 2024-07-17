@@ -18,6 +18,8 @@ class Jar:
     def withdraw(self, n):
         if n > self._cookies + n > self._capacity:
             raise ValueError("Withdraw value too large")
+        if n > self._cookies + n > self._size:
+            raise ValueError("Withdraw value too large")
         self._cookies -= n
 
     @property
