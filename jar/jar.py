@@ -16,10 +16,10 @@ class Jar:
         self._cookies += n
 
     def withdraw(self, n):
-        if n > self._cookies + n > self._capacity:
-            raise ValueError("Withdraw value too large")
-        if n > self._cookies + n > self._size:
-            raise ValueError("Withdraw value too large")
+        if not isinstance(n, int) or n < 0:
+            raise ValueError("Number of cookies to withdraw must be a non-negative integer.")
+        if self._cookies < n:
+            raise ValueError("Cannot withdraw more cookies than are in the jar.")
         self._cookies -= n
 
     @property
