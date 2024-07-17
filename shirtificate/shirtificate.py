@@ -6,6 +6,7 @@ from PIL import Image
 class PDF(FPDF):
     def header(self):
         self.set_font("helvetica", "B", 25)
+        self.cell(80)
         self.cell(30,10, "CS50 Shirtificate", align="C")
         self.ln(20)
 
