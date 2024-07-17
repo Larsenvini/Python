@@ -37,6 +37,7 @@ class PDF(FPDF):
 
         self.set_xy(x,y)
         self.set_font("helvetica", "B", 24)
+        self.set_text_color(255, 255, 255)
         self.cell(text_width,  10, text, align="C")
 
 def download_image(url, save_path):
