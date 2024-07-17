@@ -18,6 +18,8 @@ class PDF(FPDF):
         x = (page_width - image_width) / 2
         y = (page_height - image_height) / 2
 
+        self.cell(80)
+
         self.image(image_path, x, y, image_width, image_height)
 
     def get_image_dimensions(self, image_path):
