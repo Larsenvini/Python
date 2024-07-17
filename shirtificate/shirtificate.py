@@ -1,3 +1,5 @@
+import requests
+from io import BytesIO
 from fpdf import FPDF
 from PIL import Image
 
