@@ -8,8 +8,16 @@ class PDF(FPDF):
         self.ln(20)
 
     def add_centered_img(self, image_path):
-        
+        image_width, image_height = self.get_image_dimensions(image_path)
 
+        page_width =self.w -2 * self.l_margin
+        page_height =self.h -2 * self.t_margin
+        x = (page_width - image_width) / 2
+        y = (page_height - image_height) / 2
+
+        self.image(image_path, x, y, image_width, image_height)
+
+    def get_image_dimensions(self, image_path):
 pdf = FPDF()
 pdf.add_page()
 pdf.set_font("helvetica", size=12) # add "B" or "I" before the size for bold/italic
