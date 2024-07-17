@@ -37,6 +37,7 @@ class PDF(FPDF):
         page_height = self.h - 2 * self.t_margin
         y = page_height / 2 - 30
 
+        Vself.cell(80)
         self.set_xy(x,y)
         self.set_font("helvetica", "B", 24)
         self.set_text_color(255, 255, 255)
