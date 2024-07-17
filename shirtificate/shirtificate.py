@@ -44,4 +44,4 @@ pdf.set_font("helvetica", size=12) # add "B" or "I" before the size for bold/ita
 pdf.add_centered_image("https://cs50.harvard.edu/python/2022/psets/8/shirtificate/shirtificate.png")
 pdf.add_centered_text(final_text)
 pdf.output("shirtificated.pdf")
-pdf = FPDF(orientation="P", unit="mm", format="A4")
+
