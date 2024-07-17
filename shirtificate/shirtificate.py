@@ -34,7 +34,7 @@ class PDF(FPDF):
         text_width = self.get_string_width(text)
         x = (page_width - text_width) / 2
 
-        page_height = self.h - 2 * self.t_margin
+        page_height = self.h 
         y = page_height / 2 - 30
 
         self.cell(80)
