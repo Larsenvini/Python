@@ -35,11 +35,12 @@ class PDF(FPDF):
         self.set_xy(x,y)
         self.set_font("helvetica", "B", 24)
         self.cell(text_width,  10, text, align="C")
-
+text = input("Name: ")
+final_text = (f"{text} took CS50")
 pdf = FPDF()
 pdf.add_page()
 pdf.set_font("helvetica", size=12) # add "B" or "I" before the size for bold/italic
 pdf.add_centered_image("https://cs50.harvard.edu/python/2022/psets/8/shirtificate/shirtificate.png")
-pdf.add_centered_text(")
+pdf.add_centered_text(final_text)
 pdf.output("shirtificated.pdf")
 pdf = FPDF(orientation="P", unit="mm", format="A4")
