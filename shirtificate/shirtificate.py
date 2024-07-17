@@ -7,7 +7,7 @@ class PDF(FPDF):
         self.cell(30,10, "CS50 Shirtificate", border =1, align="C")
         self.ln(20)
 
-    def add_centered_img(self, image_path):
+    def add_centered_image(self, image_path):
         image_width, image_height = self.get_image_dimensions(image_path)
 
         page_width =self.w -2 * self.l_margin
