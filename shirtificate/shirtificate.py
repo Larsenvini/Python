@@ -6,7 +6,7 @@ from PIL import Image
 class PDF(FPDF):
     def header(self):
         self.set_font("helvetica", "B", 15)
-        self.cell(0, 10, "CS50 Shirtificate", align="C", ln=True)
+        self.cell(0, 10, "CS50 Shirtificate", align="C", new_x=XPos.LMARGIN, new_y=YPos.NEXT.)
 
     def add_centered_image(self, image_path):
         image_width, image_height = self.get_image_dimensions(image_path)
