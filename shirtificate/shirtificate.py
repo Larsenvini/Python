@@ -1,4 +1,5 @@
 from fpdf import FPDF
+from PIL import Image
 
 class PDF(FPDF):
     def header(self):
