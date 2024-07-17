@@ -6,7 +6,7 @@ from PIL import Image
 class PDF(FPDF):
     def header(self):
         self.set_font("helvetica", "B", 15)
-        self.cell(0, 10, "CS50 Shirtificate", align="C", ln=True)
+        self.cell(0, 10, "CS50 Shirtificate", align="C", new_x="LMARGIN", new_y="NEXT")
 
     def add_centered_image(self, image_path):
         image_width, image_height = self.get_image_dimensions(image_path)
@@ -14,7 +14,7 @@ class PDF(FPDF):
         page_width = self.w
         page_height = self.h
         x = (page_width - image_width) / 2
-        y = (page_height - image_height) / 2 + 10  # Adjust the y position if needed
+        y = (page_height - image_height) / 2 + 20  # Adjust the y position if needed
 
         self.image(image_path, x, y, image_width, image_height)
 
@@ -30,7 +30,7 @@ class PDF(FPDF):
         x = (page_width - text_width) / 2
 
         page_height = self.h
-        y = page_height / 2 - 40  # Move the text up
+        y = page_height / 2 + 50  # Move the text up
 
         # Draw the text outline by drawing the text multiple times with a slight offset
         self.set_font("helvetica", "B", 24)
@@ -76,3 +76,4 @@ pdf.set_font("helvetica", size=12)  # add "B" or "I" before the size for bold/it
 pdf.add_centered_image(image_path)
 pdf.add_centered_text(final_text)
 pdf.output("shirtificate.pdf")
+
