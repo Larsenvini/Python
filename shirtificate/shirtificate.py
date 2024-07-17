@@ -38,6 +38,9 @@ class PDF(FPDF):
         self.set_xy(x,y)
         self.set_font("helvetica", "B", 24)
         self.cell(text_width,  10, text, align="C")
+
+def download_image(url, save_path):
+    
 text = input("Name: ")
 final_text = (f"{text} took CS50")
 pdf = FPDF()
