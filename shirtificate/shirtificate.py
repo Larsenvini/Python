@@ -13,8 +13,8 @@ class PDF(FPDF):
     def add_centered_image(self, image_path):
         image_width, image_height = self.get_image_dimensions(image_path)
 
-        page_width =self.w -2 * self.l_margin
-        page_height =self.h -2 * self.t_margin
+        page_width =self.w
+        page_height =self.h
         x = (page_width - image_width) / 2
         y = (page_height - image_height) / 2
 
@@ -30,7 +30,7 @@ class PDF(FPDF):
         return 150, 150 * aspect_ratio
 
     def add_centered_text(self, text):
-        page_width = self.w 
+        page_width = self.w
         text_width = self.get_string_width(text)
         x = (page_width - text_width) / 2
 
