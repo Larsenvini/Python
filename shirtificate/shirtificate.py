@@ -32,7 +32,7 @@ class PDF(FPDF):
         x = (page_width - text_width) / 2
 
         page_height = self.h - 2 * self.t_margin
-        y = page_height / 2
+        y = page_height / 2 - 30
 
         self.set_xy(x,y)
         self.set_font("helvetica", "B", 24)
