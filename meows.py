@@ -4,3 +4,4 @@ def meow(n: int):
 
 number: int = int(input("Number? "))
 meow(number)
+ 
