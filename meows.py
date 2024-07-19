@@ -21,3 +21,4 @@ Meow n times
 number: int = int(input("Number? "))
 meows: str = meow(number)
 print(meows, end="")
+print(type(meows))
