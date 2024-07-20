@@ -6,4 +6,4 @@ coins = {"galleons":100, "sickles": 50 ,"knuts": 25}
 
 print(total(**coins), "Knuts")
 """
-def f(*)
+def f(*args, **kwargs):
