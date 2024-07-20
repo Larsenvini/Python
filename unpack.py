@@ -7,6 +7,6 @@ coins = {"galleons":100, "sickles": 50 ,"knuts": 25}
 print(total(**coins), "Knuts")
 """
 def f(*args, **kwargs):
-    print("Positionsl:", args)
+    print("Positionsl:", kwargs)
 
-f(100, 50, 25, 5)
+f(galleons = 100, sickles = 50, knuts = 25, pennies = 5)
