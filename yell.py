@@ -7,9 +7,11 @@ def yell(*words):
     uppercased = []
     for word in words:
         uppercased.append(word.upper())
-        after:
-        """
+    after: using map
+
     uppercased = map(str.upper, words)
     print(*uppercased)
-
+    """"
+    uppercased = []
+    print(*uppercased)
 main()
