@@ -3,5 +3,5 @@ def total(galleons, sickles, knuts):
 #unpacking
 coins = [100, 50 ,25]
 
-print(total(*coins, "Knuts"))
+print(total(*coins), "Knuts")
 
