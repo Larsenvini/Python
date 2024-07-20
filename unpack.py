@@ -3,5 +3,5 @@ def total(galleons, sickles, knuts):
 
 coins = [100, 50 ,25]
 
-print(total(coins), "Knuts")
+print(total(coins[0], coins [1], coins[2]), "Knuts")
 
