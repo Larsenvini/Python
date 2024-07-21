@@ -11,7 +11,7 @@ def yell(*words):
 
     uppercased = map(str.upper, words)
     print(*uppercased)
-    """"
-    uppercased = []
+    """
+    uppercased = [word.upper() for word in words]
     print(*uppercased)
 main()
