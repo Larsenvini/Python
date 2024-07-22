@@ -36,7 +36,7 @@ def main():
     print("Welcome to RacerMail!")
     provider = get_provider_choice()
     print("Ok! Please login: ")
-    sender = 
+    sender = get_email_address()
     password = getpass("Password: ")
     recipient = input("To: ")
     subject = input("Subject: ")
@@ -45,6 +45,17 @@ def main():
     smtp_info = get_smtp_info(provider, sender, password)
     email_content = compose_email(sender, recipient, subject, body)
     schedule_email(send_time, email_content, recipient, smtp_info)
+
+def get_email_address():
+    while True:
+
+        email = input("Email address: ")
+        if validators.email(input(email)) == True:
+            print("Valid")
+            return email
+        else:
+            print("Invalid, try again.")
+
 
 def get_provider_choice():
 
