@@ -17,6 +17,8 @@ def compose_email(sender, recipient, subject, body):
     msg['From'] = sender
     msg['To'] = recipient
     msg['Subject'] = subject
+    msg.attach(MIMEText(body, 'plain'))
+    return msg.as_string()
 
 def store_email():
     ...
