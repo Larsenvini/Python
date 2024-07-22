@@ -3,6 +3,8 @@
 smtplib
 pytest
 time
+validators
+logging
 threading
 MIMEText from email.mime.text
 MIMEMultipart from email.mime.multipart

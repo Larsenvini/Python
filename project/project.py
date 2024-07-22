@@ -3,6 +3,7 @@ import smtplib
 import time
 import threading
 import logging
+import validators
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime, timedelta
@@ -35,7 +36,7 @@ def main():
     print("Welcome to RacerMail!")
     provider = get_provider_choice()
     print("Ok! Please login: ")
-    sender = input("Email address: ")
+    sender = 
     password = getpass("Password: ")
     recipient = input("To: ")
     subject = input("Subject: ")
