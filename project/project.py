@@ -40,6 +40,7 @@ email_queue = PriorityQueue()
 
 def main():
     print("Welcome to RacerMail!")
+    while True: 
     provider = get_provider_choice()
     print("Ok! Please login: ")
     sender = get_email_address()
