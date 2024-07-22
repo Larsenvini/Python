@@ -65,7 +65,7 @@ def schedule_new_email():
     smtp_info = get_smtp_info(provider, sender, password)
     email_content = compose_email(sender, recipient, subject, body)
     schedule_email(send_time, email_content, recipient, smtp_info)
-    print("Email Sent!")
+    print("Your email has been scheduled!")
 
 def get_email_address():
     while True:
@@ -123,11 +123,8 @@ def compose_email(sender, recipient, subject, body):
 # function to schedule mail, takes as arguments(4):
 # send_time, email_content, recipient, smtp_info.
 def schedule_email(send_time, email_content, recipient, smtp_info):
-    delay = (send_time - datetime.now()).total_seconds()
-    if delay < 0:
-        raise ValueError("Scheduled time must be in the future")
-
-    threading.Timer(delay, send_email, [email_content, recipient, smtp_info]).start()
+    email_queue.put((send_time, email_content, recipient, smtp_info))
+    logging.info(f"Email scheduled to {recipient} at {send_time}")
 
 def get_send_time():
     while True:
@@ -165,6 +162,20 @@ def send_email(email_content, recipient, smtp_info):
     except Exception as e:
         logging.error(f"An unexpected error occurred: {e}")
         print(f"An unexpected error occurred: {e}")
+
+def proccess_scheduled_emails():
+    while True:
+        try:
+            if not email_queue.empty():
+                send_time, email_content, recipient, smtp_info = email_queue.queue[0]
+
+                if datetime.now() >= send_time:
+                    email_queue.get()
+                    send_email(email_content, recipient, smtp_info)
+            time.sleep(5)
+        except Exception as e:
+            logging.error(f"Error in processing scheduled mails: {e}")
+            print(f"Error in processing scheduled mails: {e}")
 
 if __name__ == "__main__":
     main()
