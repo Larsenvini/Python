@@ -40,14 +40,27 @@ email_queue = PriorityQueue()
 
 def main():
     print("Welcome to RacerMail!")
-    while True: 
+    while True:
+        print("1. Schedule a new email")
+        print("2. Exit")
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            schedule_new_email()
+        elif choice == "2":
+            print("Exiting RacerMail. Goodbye!")
+            break
+        else:
+            print("Invalid choice")
+
+def schedule_new_email():
     provider = get_provider_choice()
     print("Ok! Please login: ")
     sender = get_email_address()
     password = getpass("Password: ")
     recipient = input("To: ")
     subject = input("Subject: ")
-    body = input(" ")
+    body = input("Body: ")
     send_time = get_send_time()
     smtp_info = get_smtp_info(provider, sender, password)
     email_content = compose_email(sender, recipient, subject, body)
