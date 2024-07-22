@@ -8,10 +8,12 @@ import time
 import threading
 
 def main():
-    sender =
-    recipient =
-    subject =
-    body = 
+    sender = input("From: ")
+    recipient = input("To: )
+    subject = input("Subject: ")
+    body = input(")
+    send._time = datetime.now() + timedelta(seconds=10)
+    email_content = subject, body
 
 # function to compose email, takes as arguments(4):
 # the sender, recipient, subject and body, just like an email.
