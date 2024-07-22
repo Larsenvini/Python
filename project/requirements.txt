@@ -1,0 +1,3 @@
+## Needed libraries:
+## pip install flask sqlalchemy flask_sqlalchemy flask_login flask_wtf wtforms sendgrid
+
