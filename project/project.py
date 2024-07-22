@@ -28,28 +28,7 @@ SMTP_PROVIDERS = {
 
 def main():
     print("Welcome to RacerMail!")
-    print("Select your email provider: ")
-    print("1. Gmail")
-    print("2. iCloud")
-    print("3. Outlook/Hotmail")
-    print("4. Yahoo")
-
-    while True:
-        try:
-            provider_choice = input("Enter the number of your provider: ")
-
-            provider_map = {
-                '1': 'gmail',
-                '2': 'icloud',
-                '3': 'outlook,
-                '4': 'yahoo'
-            }
-
-            if provider_choice not in provider_map:
-                print("Invalid choice")
-                continue
-            else:
-                
+    provider = get_provider_choice()
     sender = input("From: ")
     recipient = input("To: ")
     subject = input("Subject: ")
@@ -59,11 +38,33 @@ def main():
     compose_email(sender, recipient, subject, body)
     schedule_email(send_time, email_content, recipient, )
 
+def get_provider_choice():
+
+     provider_map = {
+        '1': 'gmail',
+        '2': 'icloud',
+        '3': 'outlook',
+        '4': 'yahoo'
+     }
+
+     while True:
+        print("Select your email provider: ")
+        print("1. Gmail")
+        print("2. iCloud")
+        print("3. Outlook/Hotmail")
+        print("4. Yahoo")
+        provider_choice = input("Enter the number of your provider: ")
+
+        if provider_choice in provider_map:
+            return provider_map[provider_choice]
+        else:
+            print("Invalid choice. Please try again.")
+
 def get_smtp_info(provider, email, password):
     if provider not in SMTP_PROVIDERS:
         raise ValueError("Unsupported email provider.\n Supported: Gmail, Icloud, Outlook/ Hotmail & Yahoo.")
     smtp_details = SMTP_PROVIDERS[provider]
-    reutrn {
+    return {
         'server': smtp_details['server'],
         'port': smtp_details['port'],
         'username': email,
