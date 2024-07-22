@@ -27,7 +27,7 @@ SMTP_PROVIDERS = {
 }
 
 def main():
-    print("New message")
+    print("Welcome to RacerMail!")
     sender = input("From: ")
     recipient = input("To: ")
     subject = input("Subject: ")
@@ -40,6 +40,13 @@ def main():
 def get_smtp_info(provider, email, password):
     if provider not in SMTP_PROVIDERS:
         raise ValueError("Unsupported email provider.\n Supported: Gmail, Icloud, Outlook/ Hotmail & Yahoo.")
+    smtp_details = SMTP_PROVIDERS[provider]
+    reutrn {
+        'server': smtp_details['server'],
+        'port': smtp_details['port'],
+        'username': email,
+        'password': password
+    }
 # function to compose email, takes as arguments(4):
 # the sender, recipient, subject and body, just like an email.
 def compose_email(sender, recipient, subject, body):
