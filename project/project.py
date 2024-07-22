@@ -163,7 +163,7 @@ def send_email(email_content, recipient, smtp_info):
         logging.error(f"An unexpected error occurred: {e}")
         print(f"An unexpected error occurred: {e}")
 
-def proccess_scheduled_emails():
+def process_scheduled_emails():
     while True:
         try:
             if not email_queue.empty():
@@ -176,6 +176,10 @@ def proccess_scheduled_emails():
         except Exception as e:
             logging.error(f"Error in processing scheduled mails: {e}")
             print(f"Error in processing scheduled mails: {e}")
+
+scheduler_thread = threading.Thread(target=process_scheduled_emails, daemon=True)
+scheduler_thread.start()
+
 
 if __name__ == "__main__":
     main()
