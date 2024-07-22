@@ -28,6 +28,25 @@ SMTP_PROVIDERS = {
 
 def main():
     print("Welcome to RacerMail!")
+    print("Select your email provider: ")
+    print("1. Gmail")
+    print("2. iCloud")
+    print("3. Outlook/Hotmail")
+    print("4. Yahoo")
+
+    try:
+        provider_choice = input("Enter the number of your provider: ")
+
+        provider_map = {
+            '1': 'gmail',
+            '2': 'icloud',
+            '3': 'outlook,
+            '4': 'yahoo'
+        }
+
+        if provider_choice not in provider_map:
+            print("Invalid choice")
+            return
     sender = input("From: ")
     recipient = input("To: ")
     subject = input("Subject: ")
