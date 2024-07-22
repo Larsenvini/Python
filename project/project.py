@@ -35,6 +35,9 @@ SMTP_PROVIDERS = {
     }
 }
 
+# priority queue to handle scheduled emails
+email_queue = PriorityQueue()
+
 def main():
     print("Welcome to RacerMail!")
     provider = get_provider_choice()
