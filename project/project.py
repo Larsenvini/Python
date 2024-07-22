@@ -1,12 +1,22 @@
-## Code for the Final Project CS50P - Vinicius Larsen Santos
-## Dependencies: pip install flask sqlalchemy flask_sqlalchemy flask_login flask_wtf wtforms sendgrid
+# Code for the Final Project CS50P - Vinicius Larsen Santos
+import smtplib
+from email.mime.text import MIMEtext
+from email.mime.multipart import MimeMultipart
+from datetime import datetime, timedelta
+
+import time
+import threading
 
 def main():
     ...
 
-
-def get_email():
-    ...
+# function to compose email, takes as arguments:
+# the sender, recipient, subject and body, just like an email.
+def compose_email(sender, recipient, subject, body):
+    msg = MIMEMultipart()
+    msg['From'] = sender
+    msg['To'] = recipient
+    msg['Subject'] = subject
 
 def store_email():
     ...
