@@ -34,19 +34,22 @@ def main():
     print("3. Outlook/Hotmail")
     print("4. Yahoo")
 
-    try:
-        provider_choice = input("Enter the number of your provider: ")
+    while True:
+        try:
+            provider_choice = input("Enter the number of your provider: ")
 
-        provider_map = {
-            '1': 'gmail',
-            '2': 'icloud',
-            '3': 'outlook,
-            '4': 'yahoo'
-        }
+            provider_map = {
+                '1': 'gmail',
+                '2': 'icloud',
+                '3': 'outlook,
+                '4': 'yahoo'
+            }
 
-        if provider_choice not in provider_map:
-            print("Invalid choice")
-            return
+            if provider_choice not in provider_map:
+                print("Invalid choice")
+                continue
+            else:
+                
     sender = input("From: ")
     recipient = input("To: ")
     subject = input("Subject: ")
