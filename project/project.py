@@ -27,11 +27,18 @@ def schedule_email(send_time, email_content, recipient, smtp_info):
     if delay < 0:
         raise ValueError("Scheduled time must be in the future")
 
-def search_email():
-    ...
+    threading.Timer(delay, send_email, [email_content, recipient, smtp_info]).start()
 
-def send_email():
-    ...
+# function to send emails, takes as arguments(3):
+# email_content, recipient, smtp_info.
+def send_email(email_content, recipient, smtp_info):
+    try:
+        with smtplib.SMTP(smtp_info['server'], smtp_info['port']) as server:
+            server.starttls()
+            server.login(smtp_info['username'], smtp_info['password'])
+            server.sendmail(smtp_info['username'], recipient, email_content)
+    except Exception as e:
+        print(f"Failed to send email: {e}")
 
-def resend_email():
-    ...
+if __name__ == "__main__":
+    main()
