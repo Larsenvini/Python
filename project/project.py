@@ -43,7 +43,7 @@ def main():
     recipient = input("To: ")
     subject = input("Subject: ")
     body = input(" ")
-    send_time = datetime.now() + timedelta(seconds=10)
+    send_time = get_send_time()
     smtp_info = get_smtp_info(provider, sender, password)
     email_content = compose_email(sender, recipient, subject, body)
     schedule_email(send_time, email_content, recipient, smtp_info)
@@ -110,6 +110,17 @@ def schedule_email(send_time, email_content, recipient, smtp_info):
 
     threading.Timer(delay, send_email, [email_content, recipient, smtp_info]).start()
 
+def get_send_time():
+    while True:
+        try:
+            send_time_str = input("Enter the send time (YYYY-MM-DD HH:MM:SS): ")
+            send_time = datetime.strptime(send_time_str, '%Y-%m-%d %H:%M:%S')
+            if send_time <= datetime.now():
+                print("The send time must be in the future.")
+            else:
+                return send_time
+        except ValueError:
+            print("Invalid date format. Please use YYYY-MM-DD HH:MM:SS.")
 # function to send emails, takes as arguments(3):
 # email_content, recipient, smtp_info.
 def send_email(email_content, recipient, smtp_info):
