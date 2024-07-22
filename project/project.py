@@ -3,9 +3,9 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime, timedelta
-
 import time
 import threading
+from getpass import getpass
 
 SMTP_PROVIDERS = {
     'gmail': {
@@ -29,7 +29,9 @@ SMTP_PROVIDERS = {
 def main():
     print("Welcome to RacerMail!")
     provider = get_provider_choice()
-    sender = input("From: ")
+    print("Ok! Please login: ")
+    sender = input("Email address: ")
+    password = getpass("Password: )
     recipient = input("To: ")
     subject = input("Subject: ")
     body = input(" ")
