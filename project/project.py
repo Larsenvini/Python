@@ -4,6 +4,8 @@ import time
 import threading
 import logging
 import validators
+import os
+from dotenv import load_dotenv
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime, timedelta
@@ -11,7 +13,7 @@ from getpass import getpass
 
 logging.basicConfig(filename='email_scheduler.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-
+load_dotenv()
 
 SMTP_PROVIDERS = {
     'gmail': {
