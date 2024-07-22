@@ -47,6 +47,7 @@ def main():
     smtp_info = get_smtp_info(provider, sender, password)
     email_content = compose_email(sender, recipient, subject, body)
     schedule_email(send_time, email_content, recipient, smtp_info)
+    print("Email Sent!")
 
 def get_email_address():
     while True:
@@ -146,5 +147,6 @@ def send_email(email_content, recipient, smtp_info):
     except Exception as e:
         logging.error(f"An unexpected error occurred: {e}")
         print(f"An unexpected error occurred: {e}")
+        
 if __name__ == "__main__":
     main()
