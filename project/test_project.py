@@ -25,4 +25,8 @@ def test_send_email():
     email_content = "Test email content"
     recipient = "recipient@example.com"
     smtp_info = {'server': 'smtp.example.com', 'port': 587, 'username': 'user', 'password': 'pass'}
-    try
+    try:
+        send_email(email_content, recipient, smtp_info)
+        assert True
+    except Exception:
+        assert False
