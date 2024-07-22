@@ -22,4 +22,7 @@ def test_schedule_email():
         assert False
 
 def test_send_email():
-    
+    email_content = "Test email content"
+    recipient = "recipient@example.com"
+    smtp_info = {'server': 'smtp.example.com', 'port': 587, 'username': 'user', 'password': 'pass'}
+    try
