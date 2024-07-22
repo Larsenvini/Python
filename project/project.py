@@ -117,10 +117,21 @@ def send_email(email_content, recipient, smtp_info):
             server.login(smtp_info['username'], smtp_info['password'])
             server.sendmail(smtp_info['username'], recipient, email_content)
         logging.info(f"Email sent to {recipient} from {smtp_info['username']}")
+
+    except smtplib.SMTPAuthenticationError:
+        logging.error(f"Authentication failed for {smtp_info['username']}")
+        print("Authentication failed. Please check your email and password.")
+    except smtplib.SMTPConnectError:
+        logging.error(f"Failed to connect to the SMTP server {smtp_info['server']}")
+        print("Failed to connect to the SMTP server. Please check your network connection.")
+    except smtplib.SMTPServerDisconnected:
+        logging.error("Disconnected from the SMTP server unexpectedly")
+        print("Disconnected from the SMTP server. Please try again.")
+    except smtplib.SMTPException as e:
+        logging.error(f"SMTP error occurred: {e}")
+        print(f"An error occurred while sending the email: {e}")
     except Exception as e:
-        logging.error(f"Failed to send email to {recipient}: {e}")
-
-        print(f"Failed to send email: {e}")
-
+        logging.error(f"An unexpected error occurred: {e}")
+        print(f"An unexpected error occurred: {e}")
 if __name__ == "__main__":
     main()
