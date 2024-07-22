@@ -52,7 +52,7 @@ def get_email_address():
     while True:
 
         email = input("Email address: ")
-        if validators.email(input(email)) == True:
+        if validators.email(email) == True:
             print("Valid")
             return email
         else:
