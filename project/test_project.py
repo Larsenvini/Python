@@ -14,4 +14,12 @@ def test_schedule_email():
     send_time = datetime.now() + timedelta(seconds=10)
     email_content = "Test content"
     recipient = "recipient@example.com"
-    smtp_info = {'server': 'smtp.example.com, 'port: 587', 'username': 'user', 'password': 'pass'}
+    smtp_info = {'server': 'smtp.example.com', 'port': 587, 'username': 'user', 'password': 'pass'}
+    try:
+        schedule_email(send_time, email_content, recipient, smtp_info)
+        assert True
+    except ValueError:
+        assert False
+
+def test_send_email():
+    
