@@ -15,6 +15,7 @@ def main():
     body = input(" ")
     send_time = datetime.now() + timedelta(seconds=10)
     email_content = subject, body
+    compose_email
 
 # function to compose email, takes as arguments(4):
 # the sender, recipient, subject and body, just like an email.
