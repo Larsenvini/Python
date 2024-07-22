@@ -1,11 +1,16 @@
 # Code for the Final Project CS50P - Vinicius Larsen Santos
 import smtplib
+import time
+import threading
+import logging
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime, timedelta
-import time
-import threading
 from getpass import getpass
+
+logging.basicConfig(filename='email_scheduler.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+
 
 SMTP_PROVIDERS = {
     'gmail': {
@@ -99,7 +104,10 @@ def send_email(email_content, recipient, smtp_info):
             server.starttls()
             server.login(smtp_info['username'], smtp_info['password'])
             server.sendmail(smtp_info['username'], recipient, email_content)
+        logging.info(f"Email sent to {recipient} from {smtp_info['username']}")
     except Exception as e:
+        logging.error(f"Failed to send email to {recipient}: {e}")
+
         print(f"Failed to send email: {e}")
 
 if __name__ == "__main__":
