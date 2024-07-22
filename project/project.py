@@ -31,14 +31,14 @@ def main():
     provider = get_provider_choice()
     print("Ok! Please login: ")
     sender = input("Email address: ")
-    password = getpass("Password: )
+    password = getpass("Password: ")
     recipient = input("To: ")
     subject = input("Subject: ")
     body = input(" ")
     send_time = datetime.now() + timedelta(seconds=10)
-    email_content = subject, body
-    compose_email(sender, recipient, subject, body)
-    schedule_email(send_time, email_content, recipient, )
+    smtp_info = get_smtp_info(provider, sender, password)
+    email_content = compose_email(sender, recipient, subject, body)
+    schedule_email(send_time, email_content, recipient, smtp_info)
 
 def get_provider_choice():
 
