@@ -7,6 +7,25 @@ from datetime import datetime, timedelta
 import time
 import threading
 
+SMTP_PROVIDERS = {
+    'gmail': {
+        'server': 'smtp.gmail.com',
+        'port': 587
+    },
+    'icloud': {
+        'server': 'smtp.mail.me.com',
+        'port': 587
+    },
+    'outlook': {
+        'server': 'smtp-mail.outlook.com',
+        'port': 587
+    },
+    'yahoo': {
+        'server': 'smtp.mail.yahoo.com',
+        'port': 587
+    }
+}
+
 def main():
     print("New message")
     sender = input("From: ")
@@ -18,6 +37,9 @@ def main():
     compose_email(sender, recipient, subject, body)
     schedule_email(send_time, email_content, recipient, )
 
+def get_smtp_info(provider, email, password):
+    if provider not in SMTP_PROVIDERS:
+        raise ValueError("Unsupported email provider.\n Supported: Gmail, Icloud, Outlook/ Hotmail & Yahoo.")
 # function to compose email, takes as arguments(4):
 # the sender, recipient, subject and body, just like an email.
 def compose_email(sender, recipient, subject, body):
