@@ -19,7 +19,7 @@ load_dotenv()
 SMTP_PROVIDERS = {
     'gmail': {
         'server': 'smtp.gmail.com',
-        'port': 587
+        'port': 465
     },
     'icloud': {
         'server': 'smtp.mail.me.com',
@@ -31,7 +31,7 @@ SMTP_PROVIDERS = {
     },
     'yahoo': {
         'server': 'smtp.mail.yahoo.com',
-        'port': 587
+        'port': 465
     }
 }
 
