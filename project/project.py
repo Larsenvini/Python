@@ -177,6 +177,7 @@ def process_scheduled_emails():
             logging.error(f"Error in processing scheduled mails: {e}")
             print(f"Error in processing scheduled mails: {e}")
 
+#starting the scheduler
 scheduler_thread = threading.Thread(target=process_scheduled_emails, daemon=True)
 scheduler_thread.start()
 
