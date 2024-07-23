@@ -141,12 +141,20 @@ def get_send_time():
 # email_content, recipient, smtp_info.
 def send_email(email_content, recipient, smtp_info):
     try:
-        with smtplib.SMTP(smtp_info['server'], smtp_info['port']) as server:
-            server.starttls()
-            server.login(smtp_info['username'], smtp_info['password'])
-            server.sendmail(smtp_info['username'], recipient, email_content)
-        logging.info(f"Email sent to {recipient} from {smtp_info['username']}")
+        if smtp_info['server'] in ['smtp.gmail.com', 'smtp.mail.yahoo.com']:
+            # Use SMTP_SSL for Gmail and Yahoo
+            with smtplib.SMTP_SSL(smtp_info['server'], smtp_info['port']) as server:
+                server.login(smtp_info['username'], smtp_info['password'])
+                server.sendmail(smtp_info['username'], recipient, email_content)
+        else:
+            # Use SMTP and starttls() for iCloud and Outlook
+            with smtplib.SMTP(smtp_info['server'], smtp_info['port']) as server:
+                server.starttls()
+                server.login(smtp_info['username'], smtp_info['password'])
+                server.sendmail(smtp_info['username'], recipient, email_content)
 
+        logging.info(f"Email sent to {recipient} from {smtp_info['username']}")
+        print(f"Email successfully sent to {recipient}")
     except smtplib.SMTPAuthenticationError:
         logging.error(f"Authentication failed for {smtp_info['username']}")
         print("Authentication failed. Please check your email and password.")
