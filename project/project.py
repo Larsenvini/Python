@@ -1,41 +1,35 @@
-# Code for the Final Project CS50P - Vinicius Larsen Santos
-import smtplib
+import os
+import base64
 import time
 import threading
 import logging
 import validators
-import os
 from dotenv import load_dotenv
+from datetime import datetime
+from queue import PriorityQueue
+from getpass import getpass
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from datetime import datetime, timedelta
-from getpass import getpass
-from queue import PriorityQueue
 
-logging.basicConfig(filename='email_scheduler.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+# Google API client libraries
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+
+# Logging configuration
+logging.basicConfig(
+    filename='email_scheduler.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 load_dotenv()
 
-SMTP_PROVIDERS = {
-    'gmail': {
-        'server': 'smtp.gmail.com',
-        'port': 465
-    },
-    'icloud': {
-        'server': 'smtp.mail.me.com',
-        'port': 587
-    },
-    'outlook': {
-        'server': 'smtp-mail.outlook.com',
-        'port': 587
-    },
-    'yahoo': {
-        'server': 'smtp.mail.yahoo.com',
-        'port': 465
-    }
-}
+# Constants
+SCOPES = ['https://www.googleapis.com/auth/gmail.send']
 
-# priority queue to handle scheduled emails
+# Priority queue to handle scheduled emails
 email_queue = PriorityQueue()
 
 def main():
@@ -54,77 +48,48 @@ def main():
             print("Invalid choice")
 
 def schedule_new_email():
-    provider = get_provider_choice()
-    print("Ok! Please login: ")
+    print("Ok! Please login to your Google account.")
+    service = authenticate_gmail()
+
     sender = get_email_address()
-    password = getpass("Password: ")
     recipient = input("To: ")
     subject = input("Subject: ")
     body = input("Body: ")
     send_time = get_send_time()
-    smtp_info = get_smtp_info(provider, sender, password)
+
     email_content = compose_email(sender, recipient, subject, body)
-    schedule_email(send_time, email_content, recipient, smtp_info)
+    schedule_email(send_time, email_content, recipient, service)
     print("Your email has been scheduled!")
+
+def authenticate_gmail():
+    """
+    Authenticate the user via OAuth 2.0 and return a Gmail API service object.
+    """
+    creds = None
+    if os.path.exists('token.json'):
+        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
+            creds = flow.run_local_server(port=0)
+
+        # Save the credentials for the next run
+        with open('token.json', 'w') as token:
+            token.write(creds.to_json())
+
+    return build('gmail', 'v1', credentials=creds)
 
 def get_email_address():
     while True:
-
         email = input("Email address: ")
-        if validators.email(email) == True:
+        if validators.email(email):
             print("Valid")
             return email
         else:
             print("Invalid, try again.")
-
-
-def get_provider_choice():
-
-     provider_map = {
-        '1': 'gmail',
-        '2': 'icloud',
-        '3': 'outlook',
-        '4': 'yahoo'
-     }
-
-     while True:
-        print("Select your email provider: ")
-        print("1. Gmail")
-        print("2. iCloud")
-        print("3. Outlook/Hotmail")
-        print("4. Yahoo")
-        provider_choice = input("Enter the number of your provider: ")
-
-        if provider_choice in provider_map:
-            return provider_map[provider_choice]
-        else:
-            print("Invalid choice. Please try again.")
-
-def get_smtp_info(provider, email, password):
-    if provider not in SMTP_PROVIDERS:
-        raise ValueError("Unsupported email provider.\n Supported: Gmail, Icloud, Outlook/ Hotmail & Yahoo.")
-    smtp_details = SMTP_PROVIDERS[provider]
-    return {
-        'server': smtp_details['server'],
-        'port': smtp_details['port'],
-        'username': email,
-        'password': password
-    }
-# function to compose email, takes as arguments(4):
-# the sender, recipient, subject and body, just like an email.
-def compose_email(sender, recipient, subject, body):
-    msg = MIMEMultipart()
-    msg['From'] = sender
-    msg['To'] = recipient
-    msg['Subject'] = subject
-    msg.attach(MIMEText(body, 'plain'))
-    return msg.as_string()
-
-# function to schedule mail, takes as arguments(4):
-# send_time, email_content, recipient, smtp_info.
-def schedule_email(send_time, email_content, recipient, smtp_info):
-    email_queue.put((send_time, email_content, recipient, smtp_info))
-    logging.info(f"Email scheduled to {recipient} at {send_time}")
 
 def get_send_time():
     while True:
@@ -137,58 +102,63 @@ def get_send_time():
                 return send_time
         except ValueError:
             print("Invalid date format. Please use YYYY-MM-DD HH:MM:SS.")
-# function to send emails, takes as arguments(3):
-# email_content, recipient, smtp_info.
-def send_email(email_content, recipient, smtp_info):
-    try:
-        if smtp_info['server'] in ['smtp.gmail.com', 'smtp.mail.yahoo.com']:
-            # Use SMTP_SSL for Gmail and Yahoo
-            with smtplib.SMTP_SSL(smtp_info['server'], smtp_info['port']) as server:
-                server.login(smtp_info['username'], smtp_info['password'])
-                server.sendmail(smtp_info['username'], recipient, email_content)
-        else:
-            # Use SMTP and starttls() for iCloud and Outlook
-            with smtplib.SMTP(smtp_info['server'], smtp_info['port']) as server:
-                server.starttls()
-                server.login(smtp_info['username'], smtp_info['password'])
-                server.sendmail(smtp_info['username'], recipient, email_content)
 
-        logging.info(f"Email sent to {recipient} from {smtp_info['username']}")
+def compose_email(sender, recipient, subject, body):
+    """
+    Compose an email with the given details and return it as a MIMEText object.
+    """
+    msg = MIMEMultipart()
+    msg['From'] = sender
+    msg['To'] = recipient
+    msg['Subject'] = subject
+    msg.attach(MIMEText(body, 'plain'))
+    return msg
+
+def schedule_email(send_time, email_content, recipient, service):
+    """
+    Schedule the email to be sent at the specified time.
+    """
+    email_queue.put((send_time, email_content, recipient, service))
+    logging.info(f"Email scheduled to {recipient} at {send_time}")
+
+def send_email(service, sender, recipient, email_content):
+    """
+    Send an email using the Gmail API.
+    """
+    try:
+        raw = base64.urlsafe_b64encode(email_content.as_bytes()).decode('utf-8')
+        message = {'raw': raw}
+
+        # Use the Gmail API to send the email
+        message = (service.users().messages().send(userId=sender, body=message).execute())
+
+        logging.info(f"Email sent to {recipient} from {sender} with Message ID: {message['id']}")
         print(f"Email successfully sent to {recipient}")
-    except smtplib.SMTPAuthenticationError:
-        logging.error(f"Authentication failed for {smtp_info['username']}")
-        print("Authentication failed. Please check your email and password.")
-    except smtplib.SMTPConnectError:
-        logging.error(f"Failed to connect to the SMTP server {smtp_info['server']}")
-        print("Failed to connect to the SMTP server. Please check your network connection.")
-    except smtplib.SMTPServerDisconnected:
-        logging.error("Disconnected from the SMTP server unexpectedly")
-        print("Disconnected from the SMTP server. Please try again.")
-    except smtplib.SMTPException as e:
-        logging.error(f"SMTP error occurred: {e}")
-        print(f"An error occurred while sending the email: {e}")
     except Exception as e:
-        logging.error(f"An unexpected error occurred: {e}")
-        print(f"An unexpected error occurred: {e}")
+        logging.error(f"An error occurred while sending the email: {e}")
+        print(f"An error occurred while sending the email: {e}")
 
 def process_scheduled_emails():
+    """
+    Continuously check the email queue and send emails at the scheduled time.
+    """
     while True:
         try:
             if not email_queue.empty():
-                send_time, email_content, recipient, smtp_info = email_queue.queue[0]
+                send_time, email_content, recipient, service = email_queue.queue[0]
 
                 if datetime.now() >= send_time:
                     email_queue.get()
-                    send_email(email_content, recipient, smtp_info)
+                    sender = email_content['From']
+                    send_email(service, sender, recipient, email_content)
             time.sleep(5)
         except Exception as e:
-            logging.error(f"Error in processing scheduled mails: {e}")
-            print(f"Error in processing scheduled mails: {e}")
+            logging.error(f"Error in processing scheduled emails: {e}")
+            print(f"Error in processing scheduled emails: {e}")
 
-#starting the scheduler
+# Starting the scheduler
 scheduler_thread = threading.Thread(target=process_scheduled_emails, daemon=True)
 scheduler_thread.start()
-
 
 if __name__ == "__main__":
     main()
