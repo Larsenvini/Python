@@ -4,30 +4,32 @@ import time
 import threading
 import logging
 import validators
-from resend import Resend
 from dotenv import load_dotenv
 from datetime import datetime
 from queue import PriorityQueue
 from getpass import getpass
+from resend import Client
 
-
-logging.basicConfig(    #logging config
+# Logging configuration
+logging.basicConfig(
     filename='email_scheduler.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
+# Load environment variables
 load_dotenv()
 
-RESEND_API_KEY = os.getenv("RESEND_API_KEY") # load api key from .env
+# Load Resend API key from environment
+RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 if not RESEND_API_KEY:
     raise ValueError("API key not found. Please set the RESEND_API_KEY in your environment variables.")
 
+# Initialize Resend client
+resend_client = Client(api_key=RESEND_API_KEY)  # Use Client to initialize
 
-resend = Resend(api_key=RESEND_API_KEY)
-
-
-email_queue = PriorityQueue() # handle schedule emails
+# Priority queue to handle scheduled emails
+email_queue = PriorityQueue()
 
 def main():
     print("Welcome to RacerMail!")
@@ -42,7 +44,7 @@ def main():
             print("Exiting RacerMail. Goodbye!")
             break
         else:
-            print("Invalid choice")
+            print("Invalid choice. Please try again.")
 
 def schedule_new_email():
     sender = get_email_address()
@@ -59,10 +61,10 @@ def get_email_address():
     while True:
         email = input("Email address: ")
         if validators.email(email):
-            print("Valid")
+            print("Valid email address.")
             return email
         else:
-            print("Invalid, try again.")
+            print("Invalid email address. Please try again.")
 
 def get_send_time():
     while True:
@@ -101,7 +103,7 @@ def send_email(email_content):
     """
     try:
         # Use the Resend API to send the email
-        response = resend.emails.send(email_content)
+        response = resend_client.send_email(email_content)  # Correct method call
 
         logging.info(f"Email sent to {email_content['to']} with response: {response}")
         print(f"Email successfully sent to {email_content['to']}")
