@@ -8,12 +8,9 @@ from dotenv import load_dotenv
 from datetime import datetime
 from queue import PriorityQueue
 from getpass import getpass
-
-# Resend library
 from resend import Resend
 
-# Logging configuration
-logging.basicConfig(
+logging.basicConfig(    #logging config
     filename='email_scheduler.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -21,16 +18,15 @@ logging.basicConfig(
 
 load_dotenv()
 
-# Load Resend API key from environment
-RESEND_API_KEY = os.getenv("RESEND_API_KEY")
+RESEND_API_KEY = os.getenv("RESEND_API_KEY") # load api key from .env
 if not RESEND_API_KEY:
     raise ValueError("API key not found. Please set the RESEND_API_KEY in your environment variables.")
 
-# Initialize Resend client
+
 resend = Resend(api_key=RESEND_API_KEY)
 
-# Priority queue to handle scheduled emails
-email_queue = PriorityQueue()
+
+email_queue = PriorityQueue() # handle schedule emails
 
 def main():
     print("Welcome to RacerMail!")
