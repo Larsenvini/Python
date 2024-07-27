@@ -4,11 +4,12 @@ import time
 import threading
 import logging
 import validators
+import resend
 from dotenv import load_dotenv
 from datetime import datetime
 from queue import PriorityQueue
 from getpass import getpass
-from resend import Resend
+
 
 logging.basicConfig(    #logging config
     filename='email_scheduler.log',
