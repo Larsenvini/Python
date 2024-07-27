@@ -12,3 +12,4 @@ params: resend.Emails.SendParams = {
 
 email = resend.Emails.send(params)
 print(email)
+
