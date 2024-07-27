@@ -4,7 +4,7 @@ import time
 import threading
 import logging
 import validators
-import resend
+from resend import Resend
 from dotenv import load_dotenv
 from datetime import datetime
 from queue import PriorityQueue
