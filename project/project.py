@@ -1,4 +1,5 @@
 # Code for the Final Project CS50P - Vinicius Larsen Santos
+
 import os
 import time
 import threading
@@ -8,7 +9,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 from queue import PriorityQueue
 from getpass import getpass
-from resend import Client
+import resend  # Import the Resend library
 
 # Logging configuration
 logging.basicConfig(
@@ -25,8 +26,8 @@ RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 if not RESEND_API_KEY:
     raise ValueError("API key not found. Please set the RESEND_API_KEY in your environment variables.")
 
-# Initialize Resend client
-resend_client = Client(api_key=RESEND_API_KEY)  # Use Client to initialize
+# Set Resend API key
+resend.api_key = RESEND_API_KEY
 
 # Priority queue to handle scheduled emails
 email_queue = PriorityQueue()
@@ -47,19 +48,21 @@ def main():
             print("Invalid choice. Please try again.")
 
 def schedule_new_email():
-    sender = get_email_address()
-    recipient = input("To: ")
+    sender = get_email_address("From: ")
+    recipient = get_email_address("To: ")
     subject = input("Subject: ")
     body = input("Body: ")
     send_time = get_send_time()
 
+    # Compose email with Resend parameters
     email_content = compose_email(sender, recipient, subject, body)
-    schedule_email(send_time, email_content, recipient)
+
+    schedule_email(send_time, email_content)
     print("Your email has been scheduled!")
 
-def get_email_address():
+def get_email_address(prompt):
     while True:
-        email = input("Email address: ")
+        email = input(prompt)
         if validators.email(email):
             print("Valid email address.")
             return email
@@ -90,12 +93,12 @@ def compose_email(sender, recipient, subject, body):
         "text": body  # Plain text version
     }
 
-def schedule_email(send_time, email_content, recipient):
+def schedule_email(send_time, email_content):
     """
     Schedule the email to be sent at the specified time.
     """
-    email_queue.put((send_time, email_content, recipient))
-    logging.info(f"Email scheduled to {recipient} at {send_time}")
+    email_queue.put((send_time, email_content))
+    logging.info(f"Email scheduled to {email_content['to']} at {send_time}")
 
 def send_email(email_content):
     """
@@ -103,7 +106,7 @@ def send_email(email_content):
     """
     try:
         # Use the Resend API to send the email
-        response = resend_client.send_email(email_content)  # Correct method call
+        response = resend.Emails.send(email_content)
 
         logging.info(f"Email sent to {email_content['to']} with response: {response}")
         print(f"Email successfully sent to {email_content['to']}")
@@ -118,7 +121,7 @@ def process_scheduled_emails():
     while True:
         try:
             if not email_queue.empty():
-                send_time, email_content, recipient = email_queue.queue[0]
+                send_time, email_content = email_queue.queue[0]
 
                 if datetime.now() >= send_time:
                     email_queue.get()
