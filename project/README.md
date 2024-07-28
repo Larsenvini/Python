@@ -72,8 +72,8 @@ Employed for running test cases, verifying the correctness and stability of the 
 
 Clone the Repository:
 
-git clone https://github.com/your-repo/email-scheduler.git
-cd email-scheduler
+git clone https://github.com/code50/135841562.git
+cd project
 
 Install Dependencies:
 
