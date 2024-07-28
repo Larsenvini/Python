@@ -29,6 +29,8 @@ def test_invalid_plate8():
 def test_invalid_plate9():
     assert is_valid("CS.") == False
 
+def test_beggining():
+    assert is_valid
 if __name__ == "__main__":
     pytest.main()
 
