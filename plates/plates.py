@@ -5,20 +5,27 @@ def main():
     else:
         print("Invalid")
 
-def is_valid(algo):
-    half_lenght = len(algo) // 2
-    alg1 = algo[:half_lenght]
-    alg2 = algo[half_lenght:]
-    if alg1.isalpha():
+def is_valid(plate):
 
-        if len(alg1) == 2:
-            return True
-        else:
+    if not (2 <= len(plate) <= 6):
+        return False
+
+    if not plate[:2].isalpha():
+        return False
+
+    if not plate.isalnum():
+        return False
+
+    number_started = False
+    for char in plate:
+        if char.isdigit():
+            if char == '0' and not number_started:
+                return False
+            number_started = True
+        elif number_started:
             return False
-    if alg2.isdigit():
-        if len(alg2) == 2:
-            return True
-        else:
-            return False
+
+    return True
 
 main()
+
