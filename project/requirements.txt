@@ -1,23 +1,6 @@
-# Needed libraries:
-
-import smtplib
-
-import time
-
-import threading
-
-import logging
-
-import validators
-
-import os
-
-from email.mime.text import MIMEText
-
-from email.mime.multipart import MIMEMultipart
-
-from datetime import datetime, timedelta
-
-from dotenv import load_dotenv
-
-from queue import PriorityQueue
+validators==0.20.0
+python-dotenv==1.0.0
+pytest==7.1.2
+smtplib==0.2.4
+email-validator==2.0.0.post2
+typing-extensions==4.6.3
