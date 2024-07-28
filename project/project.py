@@ -12,7 +12,7 @@ from datetime import datetime, timedelta
 from getpass import getpass
 from queue import PriorityQueue
 
-load_dotenv() #loading .env
+load_dotenv() #loading .env5
 
 logging.basicConfig( #logging set up
     filename='email_scheduler.log',
