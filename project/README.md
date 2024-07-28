@@ -1,5 +1,5 @@
 # RacerMail
-#### Video Demo: [URL HERE]
+#### Video Demo: https://youtu.be/EtG1M1yLsNI
 #### Description:
 
 RacerMail is a robust and straightforward email scheduling application designed as the final project for the CS50P course, developed by Vinicius Larsen Santos. This command-line interface (CLI) tool allows users to schedule emails to be sent at a specified future time, providing an intuitive way to manage outgoing emails. The project leverages Mailtrap as a testing service, enabling users to test email sending capabilities without needing a live email server setup.
