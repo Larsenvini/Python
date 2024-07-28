@@ -43,3 +43,4 @@ def test_get_send_time(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: 'invalid date')
     with pytest.raises(ValueError):
         get_send_time()
+
