@@ -17,15 +17,12 @@ def is_valid(s):
     return False
 
 def starts_with_letters(s):
-    # Check if the string starts with at least two letters
     return s[:2].isalpha()
 
 def has_correct_length(s):
-    # Check if the string has a length between 2 and 6 characters
     return 2 <= len(s) <= 6
 
 def numbers_at_end(s):
-    # Check if numbers are only at the end of the string
     if s[-1].isdigit():
         return True
     return False
