@@ -78,39 +78,39 @@ cd project
 Install Dependencies:
 
 pip install -r requirements.txt
+
 Setup Environment Variables:
+
+Sign up for MailTrap and create a project, then copy the smtp credentials
 
 Create a .env file in the root directory and add your Mailtrap SMTP credentials:
 
-plaintext
-Copy code
 MAILTRAP_SMTP_SERVER=sandbox.smtp.mailtrap.io
 MAILTRAP_SMTP_PORT=587
 MAILTRAP_SMTP_USER=your_mailtrap_username
 MAILTRAP_SMTP_PASSWORD=your_mailtrap_password
-How to Run
+
+# How to Run:
+
 Start the Email Scheduler:
 
 Run the following command:
-
-bash
-Copy code
 python project.py
+
 Choose an Option:
 
 Schedule a new email: Follow the prompts to enter the sender's email, recipient's email, subject, body, and scheduled time.
 Exit: Quit the application.
+
 Keep the Program Running:
 The program needs to remain active to ensure that scheduled emails are sent successfully at their designated times. If you exit the program, unsent emails in the queue will not be dispatched.
 
-Testing
+# Testing:
 To run the test suite, use the following command in the project's root directory:
 
-bash
-Copy code
 pytest test_project.py
 This command will execute the unit tests defined in test_project.py, checking for correct functionality and ensuring that each component operates as expected.
 
-Conclusion
-RacerMail offers a practical solution for scheduling emails through a simple command-line interface. By leveraging Python's robust standard libraries and third-party modules, it provides a reliable platform for managing outgoing emails, supported by a strong foundation in software design principles. This project not only fulfills the requirements of the CS50P final project but also showcases the potential of Python in building efficient, user-friendly applications. Whether for personal use or as a stepping stone for further development, RacerMail demonstrates how a well-architected codebase can deliver significant utility in everyday tasks.
+# Conclusion:
 
+RacerMail offers a practical solution for scheduling emails through a simple command-line interface. By leveraging Python's robust standard libraries and third-party modules, it provides a reliable platform for managing outgoing emails, supported by a strong foundation in software design principles. This project not only fulfills the requirements of the CS50P final project but also showcases the potential of Python in building efficient, user-friendly applications. Whether for personal use or as a stepping stone for further development, RacerMail demonstrates how a well-architected codebase can deliver significant utility in everyday tasks.
