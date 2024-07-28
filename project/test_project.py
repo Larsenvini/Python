@@ -1,5 +1,4 @@
 # test_project.py
-
 import pytest
 from datetime import datetime, timedelta
 from project import get_email_address, compose_email, schedule_email, get_send_time, email_queue
