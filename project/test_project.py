@@ -5,12 +5,12 @@ from datetime import datetime, timedelta
 from project import get_email_address, compose_email, schedule_email, get_send_time, email_queue, send_email
 from unittest.mock import patch
 
-# Test get_email_address with valid input
+#testing valid address
 def test_get_email_address(monkeypatch):
     # Simulate user input for email address
     monkeypatch.setattr('builtins.input', lambda _: 'test@example.com')
     email = get_email_address()
-    assert email == 'test@example.com'  # Expect valid email address
+    assert email == 'test@example.com' 
 
 # Test compose_email generates correct MIME format
 def test_compose_email():
