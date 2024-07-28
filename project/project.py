@@ -1,33 +1,32 @@
 # Code for the Final Project CS50P - Vinicius Larsen Santos
-
-import os
+import smtplib
 import time
 import threading
 import logging
 import validators
+import os
 from dotenv import load_dotenv
-from datetime import datetime
-from queue import PriorityQueue
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from datetime import datetime, timedelta
 from getpass import getpass
-import resend  # Import the Resend library
+from queue import PriorityQueue
 
-# Logging configuration
+# Load environment variables
+load_dotenv()
+
+# Set up logging
 logging.basicConfig(
     filename='email_scheduler.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-# Load environment variables
-load_dotenv()
-
-# Load Resend API key from environment
-RESEND_API_KEY = os.getenv("RESEND_API_KEY")
-if not RESEND_API_KEY:
-    raise ValueError("API key not found. Please set the RESEND_API_KEY in your environment variables.")
-
-# Set Resend API key
-resend.api_key = RESEND_API_KEY
+# SMTP settings for Mailtrap
+MAILTRAP_SMTP_SERVER = os.getenv('MAILTRAP_SMTP_SERVER')
+MAILTRAP_SMTP_PORT = int(os.getenv('MAILTRAP_SMTP_PORT'))
+MAILTRAP_SMTP_USER = os.getenv('MAILTRAP_SMTP_USER')
+MAILTRAP_SMTP_PASSWORD = os.getenv('MAILTRAP_SMTP_PASSWORD')
 
 # Priority queue to handle scheduled emails
 email_queue = PriorityQueue()
@@ -45,29 +44,39 @@ def main():
             print("Exiting RacerMail. Goodbye!")
             break
         else:
-            print("Invalid choice. Please try again.")
+            print("Invalid choice")
 
 def schedule_new_email():
-    sender = get_email_address("From: ")
-    recipient = get_email_address("To: ")
+    print("Ok! Please login to your email account.")
+    sender = get_email_address()
+    recipient = input("To: ")
     subject = input("Subject: ")
     body = input("Body: ")
     send_time = get_send_time()
-
-    # Compose email with Resend parameters
     email_content = compose_email(sender, recipient, subject, body)
-
-    schedule_email(send_time, email_content)
+    schedule_email(send_time, email_content, recipient, sender)
     print("Your email has been scheduled!")
 
-def get_email_address(prompt):
+def get_email_address():
     while True:
-        email = input(prompt)
+        email = input("Email address: ")
         if validators.email(email):
-            print("Valid email address.")
+            print("Valid")
             return email
         else:
-            print("Invalid email address. Please try again.")
+            print("Invalid, try again.")
+
+def compose_email(sender, recipient, subject, body):
+    msg = MIMEMultipart()
+    msg['From'] = sender
+    msg['To'] = recipient
+    msg['Subject'] = subject
+    msg.attach(MIMEText(body, 'plain'))
+    return msg.as_string()
+
+def schedule_email(send_time, email_content, recipient, sender):
+    email_queue.put((send_time, email_content, recipient, sender))
+    logging.info(f"Email scheduled to {recipient} at {send_time}")
 
 def get_send_time():
     while True:
@@ -81,57 +90,46 @@ def get_send_time():
         except ValueError:
             print("Invalid date format. Please use YYYY-MM-DD HH:MM:SS.")
 
-def compose_email(sender, recipient, subject, body):
-    """
-    Compose an email with the given details and return it as a dictionary.
-    """
-    return {
-        "from": sender,
-        "to": [recipient],
-        "subject": subject,
-        "html": f"<p>{body}</p>",  # Using HTML for email body
-        "text": body  # Plain text version
-    }
-
-def schedule_email(send_time, email_content):
-    """
-    Schedule the email to be sent at the specified time.
-    """
-    email_queue.put((send_time, email_content))
-    logging.info(f"Email scheduled to {email_content['to']} at {send_time}")
-
-def send_email(email_content):
-    """
-    Send an email using the Resend API.
-    """
+def send_email(email_content, recipient, sender):
     try:
-        # Use the Resend API to send the email
-        response = resend.Emails.send(email_content)
+        # Connect to Mailtrap's SMTP server
+        with smtplib.SMTP(MAILTRAP_SMTP_SERVER, MAILTRAP_SMTP_PORT) as server:
+            server.login(MAILTRAP_SMTP_USER, MAILTRAP_SMTP_PASSWORD)
+            server.sendmail(sender, recipient, email_content)
 
-        logging.info(f"Email sent to {email_content['to']} with response: {response}")
-        print(f"Email successfully sent to {email_content['to']}")
-    except Exception as e:
-        logging.error(f"An error occurred while sending the email: {e}")
+        logging.info(f"Email sent to {recipient} from {sender}")
+        print(f"Email successfully sent to {recipient}")
+    except smtplib.SMTPAuthenticationError:
+        logging.error(f"Authentication failed for {sender}")
+        print("Authentication failed. Please check your email and password.")
+    except smtplib.SMTPConnectError:
+        logging.error(f"Failed to connect to the SMTP server {MAILTRAP_SMTP_SERVER}")
+        print("Failed to connect to the SMTP server. Please check your network connection.")
+    except smtplib.SMTPServerDisconnected:
+        logging.error("Disconnected from the SMTP server unexpectedly")
+        print("Disconnected from the SMTP server. Please try again.")
+    except smtplib.SMTPException as e:
+        logging.error(f"SMTP error occurred: {e}")
         print(f"An error occurred while sending the email: {e}")
+    except Exception as e:
+        logging.error(f"An unexpected error occurred: {e}")
+        print(f"An unexpected error occurred: {e}")
 
 def process_scheduled_emails():
-    """
-    Continuously check the email queue and send emails at the scheduled time.
-    """
     while True:
         try:
             if not email_queue.empty():
-                send_time, email_content = email_queue.queue[0]
+                send_time, email_content, recipient, sender = email_queue.queue[0]
 
                 if datetime.now() >= send_time:
                     email_queue.get()
-                    send_email(email_content)
+                    send_email(email_content, recipient, sender)
             time.sleep(5)
         except Exception as e:
             logging.error(f"Error in processing scheduled emails: {e}")
             print(f"Error in processing scheduled emails: {e}")
 
-# Starting the scheduler
+# Start the scheduler
 scheduler_thread = threading.Thread(target=process_scheduled_emails, daemon=True)
 scheduler_thread.start()
 
