@@ -25,10 +25,9 @@ def has_correct_length(s):
 def numbers_at_end(s):
     if s[-1].isdigit():
         return True
-    return False
+    return Falses
 
 def contains_only_allowed_characters(s):
-    # Check if the string contains only uppercase letters and digits
     return s.isalnum() and s.isupper()
 
 if __name__ == "__main__":
